@@ -11,11 +11,15 @@ class Splash extends React.Component{
                 {/* <GreetingContainer /> */}
                 <div className='splash-modal'>
                     <div className='splash-modal-content'>
-                        <h1>Unlimited movies, TV shows, and more.</h1>
-                        <h2>Watch anywhere. Cancel anytime.</h2>
-                        <h3>Ready to watch?</h3>
+                        <h1 className="unlimited-movie">Unlimited movies, TV shows, and more.</h1>
+                        <h2 className="watch-anywhere">Watch anywhere. Cancel anytime.</h2>
+                        <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+                        {/* <label className="sign-up-label"> Hello </label> */}
+                        <div className="sign-up-container">
+                        <input type="text" className="sign-up-input" value={"Email Address"} />
                         <Link className='greeting-btn' to='/signup'>Get Started</Link>
-                        <Link className="login-btn" to="/login">Log In</Link>
+                        </div>
+                         {/* <Link className="login-btn" to="/login">Log In</Link> */}
                     </div>
                  </div>
         </div>
