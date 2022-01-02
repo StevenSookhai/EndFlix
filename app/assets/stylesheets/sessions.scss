@@ -1,0 +1,128 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.session-container{
+
+}
+.session-form{
+    // border: 5px solid red;
+ background-color: rgba(0, 0, 0, 0.90);
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
+    position:absolute;
+    border-radius: 4px;
+    color: white;
+    width: 300px;
+    height: 570px;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family:  sans-serif;
+    padding-top: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+  h1,input, button {
+    width: 90%;
+    padding-top: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    
+  }
+  .remember-me{
+      padding-top: 5px;
+      font-size: 12px;
+      color: #8d8d8d
+
+  }
+  .need-help {
+      padding-top: 5px;
+      position: absolute;
+      margin-left: 160px;
+      font-size: 12px;
+      text-align: right;
+       color: #8d8d8d
+  }
+  .facebook-login{
+    position: absolute;
+    font-size: 15px;
+    color: #8d8d8d;
+    margin-top: 80px;
+    margin-left: -80px;
+    padding-right: 100px;
+
+  }
+  .sign-up-link{
+   position: absolute;
+       font-size: 16px;
+       color: #8d8d8d;
+       margin-top: 110px;
+    //  padding-top: 100px;
+    margin-left: -80px;
+    padding-right: 100px;   
+  }
+
+  .sign-up{
+    color: white;
+    position: absolute;
+    font-size: 16px;
+    color: white;
+    margin-top: 110px;
+    margin-left:32px;
+    padding-right: 100px;  
+    text-decoration: none;
+  }
+
+  .google-cap{
+    position: absolute;
+    font-size: 12px;
+    color: #8d8d8d;
+    margin-top: 135px;
+    margin-left: -80px;
+    padding-right: 100px;
+
+  }
+  button {
+    width: 100%;
+    background-color: red;
+    display: flex;
+    color: white;
+    justify-content: center;
+    //   font-size: 10px;
+    // padding-top: 30px;
+    flex-direction: row;
+    font-size: 18px;
+    align-items: center;
+    vertical-align: middle;
+    padding: 13px;
+    margin-top: 40px;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  input {
+    border: 4px solid black;
+    display: flex;
+    align-items: stretch;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px;
+    // padding-top:10px;
+    margin-bottom: 15px;
+    background-color: #333333;
+    border: none;
+  }
+  .session-email{
+    color: #8d8d8d
+  }
+  .session-password{
+    color: #8d8d8d
+  }
+  input:focus{
+      top: 12px;
+  }
+}
