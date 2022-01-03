@@ -4,13 +4,15 @@ import { fetchProfiles } from "../../actions/profile._actions";
 
 const mapStateToProps = (state) => {
     return({
-        profiles: state.entities.profiles
+        profiles: Object.values(state.entities.profiles),
+        currentUser: state.entities.users[state.session.id]
     })
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        fetchProfiles: profiles =>  dispatch(fetchProfiles(profiles))
+        fetchProfiles: profiles =>  dispatch(fetchProfiles(profiles)),
+        logout: () => dispatch(logout())
     }
 }
 
