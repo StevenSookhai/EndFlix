@@ -1,6 +1,7 @@
 import React from "react";
 import GreetingContainer from "../greetings/greeting_container";
 import { Link } from "react-router-dom";
+import Header from "./header";
 
 class Splash extends React.Component{
     render(){
@@ -9,6 +10,7 @@ class Splash extends React.Component{
         <div className="splash-content">
                 <img src={bgImg} className="splash-bg" />
                 {/* <GreetingContainer /> */}
+                <Header />
                 <div className='splash-modal'>
                     <div className='splash-modal-content'>
                         <h1 className="unlimited-movie">Unlimited movies, TV shows, and more.</h1>
@@ -17,11 +19,16 @@ class Splash extends React.Component{
                         {/* <label className="sign-up-label"> Hello </label> */}
                         <div className="sign-up-container">
                         <input type="text" className="sign-up-input" value={"Email Address"} />
-                        <Link className='greeting-btn' to='/signup'>Get Started</Link>
+                        <Link className='greeting-btn' to='/signup'>Get Started </Link>
                         </div>
                          {/* <Link className="login-btn" to="/login">Log In</Link> */}
                     </div>
                  </div>
+
+            {/* <div className="second-splash-section">
+                    <h1>Enjoy on your TV.</h1>
+                    <h2>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</h2>
+            </div> */}
         </div>
         )
     }

@@ -29,8 +29,13 @@
   bottom: 0;
   right: 0;
   background-color: rgba(0,0,0,0.6); 
-}
 
+  
+}
+.logo{
+    margin-left: 2%;
+    margin-top: .8%;
+  }
 .splash-modal-content {
   display: block;
   // border: 5px solid green;
@@ -55,6 +60,7 @@
     inline-size: 700px;
   }
   .watch-anywhere{
+    padding-top: 20px;
     font-size: 26px;
     // padding-bottom: 40px;
     font-family: Helvetica;
@@ -85,8 +91,11 @@
   .greeting-btn {
     // position: absolute;
     // display: block;
+    text-align: center;
+    width: 60px;
     color: white;
     padding: 27px;
+    padding-right: 100px;
     // padding-bottom: 28x;
     // padding-top: 28px;
     // margin: 5px;
@@ -116,10 +125,10 @@
   //   font-family: sans-serif;
   // }
   
-  h3 {
-    padding-bottom: 25px;
-    font-family: sans-serif;
-  }
+  // h3 {
+  //   padding-bottom: 25px;
+  //   font-family: sans-serif;
+  // }
   
 }
 
@@ -137,14 +146,26 @@
   
 }
 
+.header-container{
+  // border: 6px solid aqua;
+  // display: flex;
+  // justify-content: center;
+}
 
-.login-btn {
+.sign-up-button-container{
+  margin-right: 50px;
+  margin-top: 1.3%;
+  display: flex;
+  float: right;
+  justify-content: center;
+  width: 100px;
+
+.splash-login-btn {
  color: white;
-    padding: 20px;
-    padding-bottom: 7px;
-    padding-top: 7px;
-    margin: 5px;
-    background-color: red;
+  text-align: center;
+    padding: 9px;
+    width: 70px;
+    background-color: #DB202C;
     border-radius: 4px;
     text-decoration: none;
     font-family: sans-serif;
@@ -152,4 +173,6 @@
     &:hover{
       background-color: #f7252f;
     }
+}
+
 }
