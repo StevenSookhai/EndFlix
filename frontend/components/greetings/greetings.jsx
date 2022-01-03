@@ -7,8 +7,14 @@ export default ({ currentUser, logout }) => {
             <p>Welcome, {currentUser.email}</p>
             <p>Hey Hey </p>
             <Link to="/">Home</Link>
-
+            <ul>
+                <li> Profile 1 </li>
+                <li> Profile 2 </li>
+                <li> Profile 3 </li>
+            </ul>
             <button onClick={logout}>Log Out</button>
+
+            <button>Manage Profiles </button>
         </div>
     ) : (
         <div>

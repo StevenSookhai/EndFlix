@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .session-container{
-
+ 
 }
 .session-form{
     // border: 5px solid red;
- background-color: rgba(0, 0, 0, 0.90);
+ background-color: rgba(0, 0, 0, 0.70);
     display:block;
     margin-right: auto;
     margin-left: auto;
@@ -100,7 +100,7 @@
     align-items: center;
     vertical-align: middle;
     padding: 13px;
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   h1 {
@@ -129,4 +129,23 @@
   input:focus{
       top: 12px;
   }
+
+  .errors{
+    background-color: orange;
+    color: white;
+  }
 }
+
+.overlay {
+  // border: 5px solid green;
+ display: flex;
+  justify-content: center;
+  position: absolute;
+  flex-direction: row-reverse;
+  z-index: -2;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.6); 
+  }

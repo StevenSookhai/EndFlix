@@ -4,6 +4,16 @@ import { Link } from "react-router-dom";
 import Header from "./header";
 
 class Splash extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            email: ''
+        }
+   
+    }
+    updateEmail(type) {
+        return e => this.setState({ [type]: e.target.value })
+    }
     render(){
         const bgImg = "https://assets.nflxext.com/ffe/siteui/vlv3/5c235903-02cc-4228-85a2-5fcef1e47627/ca14817e-a9cb-460a-8865-f53dc27950e4/US-en-20211227-popsignuptwoweeks-perspective_alpha_website_medium.jpg" 
         return(    
@@ -20,7 +30,7 @@ class Splash extends React.Component{
                             <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
                             {/* <label className="sign-up-label"> Hello </label> */}
                             <div className="sign-up-container">
-                            <input type="text" className="sign-up-input" value={"Email Address"} />
+                            <input type="text" className="sign-up-input" value={"Email Address"} onChange={this.updateEmail('email')}/>
                             <Link className='greeting-btn' to='/signup'>Get Started </Link>
                             </div>
                             {/* <Link className="login-btn" to="/login">Log In</Link> */}
