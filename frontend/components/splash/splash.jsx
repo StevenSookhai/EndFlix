@@ -28,7 +28,7 @@ class Splash extends React.Component{
                             <h1 className="unlimited-movie">Unlimited movies,TV          shows, and more.</h1>
                             <h2 className="watch-anywhere">Watch anywhere. Cancel anytime.</h2>
                             <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
-                            {/* <label className="sign-up-labe"> Hello </label> */}
+                            {/* <label className="sign-up-label"> Hello </label> */}
                             <div className="sign-up-container">
                             <input type="text" className="sign-up-input" value={"Email Address"} onChange={this.updateEmail('email')}/>
                             <Link className='greeting-btn' to='/signup'>Get Started </Link>
