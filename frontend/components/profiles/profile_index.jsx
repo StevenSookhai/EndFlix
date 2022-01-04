@@ -21,7 +21,12 @@ export default class ProfileIndex extends React.Component{
                     </ul>
                     <button onClick={this.props.logout}>Log Out</button>
 
-                    <button>Manage Profiles </button>
+                    {/* <button>Manage Profiles </button> */}
+                    <Link to="/manageprofiles">Manage Profile</Link>
+                    <div>Testing</div>
+                    <div>Testing</div>
+                    <div>Testing</div> 
+                    <div>Testing</div> 
                 </div>
             </div>
         )

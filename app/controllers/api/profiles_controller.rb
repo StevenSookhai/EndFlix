@@ -1,5 +1,6 @@
 class Api::ProfilesController < ApplicationController
     def create
+    # debugger
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     if @profile.save

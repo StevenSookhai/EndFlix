@@ -8,6 +8,7 @@ import Splash from "./splash/splash";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Switch, Redirect } from "react-router-dom";
 import ProfileIndexContainer from "./profiles/profile_index_container";
+import NewProfileFormContainer from "./profiles/new_profile_form_container";
 
 const App = () => (
     <div>
@@ -19,6 +20,7 @@ const App = () => (
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <ProtectedRoute path='/profiles' component={ProfileIndexContainer} /> 
+        <ProtectedRoute path='/manageprofiles' component={NewProfileFormContainer} /> 
         <AuthRoute path="/" component={Splash}/>
         </Switch>
     </div>
