@@ -4,6 +4,7 @@ export const RECEIVE_PROFILES = 'RECEIVE_PROFILES'
 export const RECEIVE_PROFILE = 'RECEIVE_PROFILE'
 export const RECEIVE_PROFILE_ERRORS = 'RECEIVE_PROFILE_ERRORS'
 export const REMOVE_PROFILE = 'REMOVE_PROFILE'
+export const RECEIVE_CURRENT_PROFILE = "RECEIVE_CURRENT_PROFILE"
 
 const receiveProfiles = (profiles) => {
     return {
@@ -25,9 +26,16 @@ const removeProfile = (profile) => {
     }
 }
 export const receiveProfileErrors = errors => ({
-    type: RECEIVE_Profile_ERRORS,
+    type: RECEIVE_PROFILE_ERRORS,
     errors
 });
+
+export const receiveCurrentProfile = profileId => {
+    return{
+        type: RECEIVE_CURRENT_PROFILE,
+        profileId
+    }
+}
 
 export const createProfile = (profile) => dispatch => ProfileUtil.createProfile(profile)
     .then(profile => dispatch(receiveProfile(profile)))
