@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ProfilesIndexItem from "./profile_index_item";
 import BrowseContainer from "../browse/browse_container";
 import { Redirect } from "react-router-dom";
+import ProfileFormContainer from "./profile_form_container";
 
 
 export default class ProfileIndex extends React.Component{
@@ -11,12 +12,14 @@ export default class ProfileIndex extends React.Component{
         super(props);
         this.state = {
             manage: false,
-            profile: null,
-            formType: 'new'
+            profile: {name: ''},
+            formType: '',
+            show: true
         }
     this.click = this.click.bind(this)
     this.manage = this.manage.bind(this)
     this.cancelAddProfile = this.cancelAddProfile.bind(this)
+    this.create = this.create.bind(this)
     }
     handleProfile(){
         this.props.history.push('/browse')
@@ -39,11 +42,17 @@ export default class ProfileIndex extends React.Component{
         }
     }
     manage(){
-        this.setState({ manage: !this.state.manage });
+        this.setState({ manage: !this.state.manage, show: !this.state.show });
+    }
+
+    create(){
+        if (!this.state.manage) {
+                this.setState({ formType: 'new'}) 
+        }
     }
 
     cancelAddProfile(){
-        this.setState({ profile: null, formType: 'new' })
+        this.setState({ profile: { name: '' }, formType: '', show: true, manage: false })
     }
 
     render(){
@@ -60,7 +69,7 @@ export default class ProfileIndex extends React.Component{
 
         const logo = "https://fontmeme.com/permalink/220102/80b2e83ec91311621e8aea703b915905.png"
 
-        if(!this.state.manage){
+        if(this.state.formType === '' && !this.state.manage){
             return (
                 <div>
 
@@ -84,13 +93,14 @@ export default class ProfileIndex extends React.Component{
                         {/* <button>Manage Profiles </button> */}
                         <div className="manage-container">
                             <button onClick={this.manage}>Manage Profiles</button>
+                            <button onClick={this.create}>Add Profile</button>
                             {/* <Link className="manage-profile" to="/manageprofiles">Manage Profiles</Link> */}
                             {/* <Link className="manage-profile" to="/manageprofiles">Manage Profiles</Link> */}
                         </div>
                     </div>
                 </div>
             )
-        }else if(this.state.manage){
+        }else if(this.state.manage && this.state.formType !== 'Edit'){
             return(
                 <div>
 
@@ -104,7 +114,8 @@ export default class ProfileIndex extends React.Component{
                         <ul className="profile-list">
                             {
                                 this.props.profiles.map( profile => 
-                                    <li className="profile-index-item-container" onClick={this.click(profile)}
+                                    <li className="profile-index-item-container"
+                                     onClick={this.click(profile)}
                                         key={profile.id}>
                                         <img src={profileImg}/>
                                         <p>{profile.name}</p>
@@ -119,7 +130,23 @@ export default class ProfileIndex extends React.Component{
                     </div>
                 </div>
             )
-        }  
+        } else if (this.state.formType === 'Edit') {
+            return(
+                <ProfileFormContainer 
+                profile = {this.state.profile}
+                cancelAddProfile = {this.cancelAddProfile}
+                formType={this.state.formType}
+                />
+            )
+        } else if (this.state.formType === 'new') {
+            return (
+                <ProfileFormContainer
+                    profile={this.state.profile}
+                    cancelAddProfile={this.cancelAddProfile}
+                    formType={this.state.formType}
+                />
+            )
+        }
     }
 }
 

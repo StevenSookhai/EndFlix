@@ -16,6 +16,7 @@ export default class Browse extends React.Component{
         return(
             <div>
                 <div className="manage-profile">{this.props.currentProfile.name}</div>
+                <p className="manage-profile" >Videos goes here</p>
                 <button className="manage-profile" onClick={() => this.props.logout()}>Logout</button>
             </div>
             
