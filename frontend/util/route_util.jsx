@@ -28,7 +28,7 @@ const profileAuth = ({ loggedIn, profileSelected, path, component: Component}) =
     <Route
         path={path}
         render={props => (
-            loggedIn ? (profileSelected ? <Component {...props} /> : <Redirect to="/profiles" />) : <Redirect to="/profiles" />
+            loggedIn ? (profileSelected ? <Component {...props} /> : <Redirect to="/browse" />) : <Redirect to="/profiles" />
         )}
     />
 );

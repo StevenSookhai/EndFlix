@@ -24,7 +24,7 @@ export const logout = () => (
 );
 
 export const findProfile = (profile) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'post',
         url: '/api/profile_session',

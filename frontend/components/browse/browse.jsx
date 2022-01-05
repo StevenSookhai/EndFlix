@@ -12,7 +12,7 @@ export default class Browse extends React.Component{
 
     }
     render(){
-        debugger
+        // debugger
         return(
             <div>
                 <div className="manage-profile">{this.props.currentProfile.name}</div>

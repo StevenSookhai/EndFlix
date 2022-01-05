@@ -9,6 +9,7 @@ class Api::ProfileSessionsController < ApplicationController
         #         else
         #             render json: @profile.errors.full_messages, status: 422
         #         end
+        # debugger
         if @profile 
           login_profile!(@profile)
           render json: @profile

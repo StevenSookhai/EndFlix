@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
             return nil
         end 
        
-        @profile = Profile.find_by(user_id: current_user.id)
+        # @profile = Profile.find_by(user_id: current_user.id)
 
         if @profile
             return @profile 
@@ -40,14 +40,15 @@ class ApplicationController < ActionController::Base
     end
 
     def profile_found?
-       if current_profile
-      return true
-    end
-    return false
+        if current_profile
+            return true
+        else
+            nil
+        end 
     end 
 
     def login_profile!(profile)
-        @current_profile = profile
+        current_profile = profile
     end 
 
 end
