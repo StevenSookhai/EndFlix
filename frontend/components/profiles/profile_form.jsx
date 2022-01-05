@@ -75,7 +75,7 @@ class ProfileForm extends React.Component{
                                 onChange={this.updateInfo('name')}
                             />
                         </label>
-                        <input type="submit" onClick={() => this.props.cancelAddProfile} value="Cancel" />
+                        <input type="submit" onClick={ this.props.cancelAddProfile} value="Cancel" />
                         {/* <input type="submit" onClick={() => this.props.deleteProfile(this.props.profile)} value="Delete" /> */}
                         <input type="submit" value="Create Profile" />
                     </form>

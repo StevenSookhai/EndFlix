@@ -29,8 +29,14 @@ class ApplicationController < ActionController::Base
         if current_user.nil?
             return nil
         end 
-       
-        # @profile = Profile.find_by(user_id: current_user.id)
+        #doing this only finds the profile that matches the user_id...hmmmmm
+        #need a way to maybe find the profile by id of some sort...maybe a boolean?
+        #maybe add a boolean to profile table and set boolean when 'logging in a profile'?
+        #then find the profile with the current boolean set to true, should be able to find the profile
+        #when logging out a profile, set boolean back to false?
+        #...plz work ;-;
+        
+        @profile = Profile.find_selected_profile(current_user.id)
 
         if @profile
             return @profile 
@@ -48,7 +54,19 @@ class ApplicationController < ActionController::Base
     end 
 
     def login_profile!(profile)
-        current_profile = profile
+        @current_profile = profile
+        # profile.selected = true
+        # profile.save!
+        profile.setSelectedProfile
+        
+
+    end 
+
+    def logout_profile(profile)
+        @current_profile = nil
+        # profile.selected = false
+        # profile.save!
+        profile.unSelectedProfile
     end 
 
 end

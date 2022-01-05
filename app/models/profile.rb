@@ -15,4 +15,23 @@ class Profile < ApplicationRecord
     # end
 
 
+    def self.find_selected_profile( user_id)
+        profile = Profile.find_by(selected: true, user_id: user_id)
+            if profile  
+                return profile 
+            else
+                nil
+            end 
+    end 
+
+    def setSelectedProfile 
+        self.selected = true
+        self.save!
+    end 
+
+    def unSelectedProfile 
+        self.selected = false
+        self.save!
+    end 
+
 end
