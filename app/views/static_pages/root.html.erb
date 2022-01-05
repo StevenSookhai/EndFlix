@@ -7,6 +7,14 @@
   </script>
 <% end %>
 
+<% if profile_found? %>
+        <script type='text/javascript'>
+            window.current_profile = <%= render(
+                'api/profiles/profile.json.jbuilder',
+                profile: current_profile
+            ).html_safe %>
+        </script>
+    <%end%>
 
 
 <div id="root">

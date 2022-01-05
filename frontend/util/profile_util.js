@@ -31,3 +31,5 @@ export const deleteProfile = (profile) => {
         method: "DELETE"
     })
 }
+
+

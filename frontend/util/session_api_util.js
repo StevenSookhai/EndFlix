@@ -22,3 +22,12 @@ export const logout = () => (
         url: `api/session`
     })
 );
+
+export const findProfile = (profile) => {
+    debugger
+    return $.ajax({
+        method: 'post',
+        url: '/api/profile_session',
+        data: { profile }
+    })
+}
