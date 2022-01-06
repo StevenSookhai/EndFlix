@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :profiles,only: [:create,:update,:destroy,:index]
     resource :profile_session, only: [:create]
+    resources :videos, only: [:index, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
