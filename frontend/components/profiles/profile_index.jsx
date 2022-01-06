@@ -88,7 +88,7 @@ export default class ProfileIndex extends React.Component{
                                 <ul >
                                     {
                                         this.props.profiles
-                                            .map(profile => <li className="p-lis"><ProfilesIndexItem profile={profile} findProfile={this.props.findProfile} /></li>)
+                                            .map(profile => <li key={profile.id} className="p-lis"><ProfilesIndexItem profile={profile} findProfile={this.props.findProfile} /></li>)
                                     }
                                 </ul>
                             </div>

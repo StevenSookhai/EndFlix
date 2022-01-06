@@ -42,7 +42,7 @@ class Splash extends React.Component{
                                     <h2 className="smart-tv">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</h2>
                                 </div>
 
-                                <div>
+                                <div className="vid-con"> 
                                     <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"></video>
                                 </div>
                     </div>
@@ -52,7 +52,7 @@ class Splash extends React.Component{
                             <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="" />
                         </div>
                         <div>
-                            <h1 className="enjoy-tv">Download your shows to watch offline.</h1>
+                            <h1 className="smart-tv">Download your shows to watch offline.</h1>
                             <h2 className="smart-tv">Save your favorites easily and always have something to watch.</h2>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ class Splash extends React.Component{
                             <h1 className="enjoy-tv">Watch everywhere.</h1>
                             <h2 className="smart-tv">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</h2>
                         </div>
-                        <div>
+                        <div className="vid-con">
                             <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"></video>
                         </div>
                     </div>
@@ -72,8 +72,8 @@ class Splash extends React.Component{
                             {/* <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"></video> */}
                             <img src="https://occ-0-448-444.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABdFTpLmANuJpYneLq8L5m7CunMCi8e8Nl4y7xaPVWzG3IeoDoq17egTQAthApKg_4sdRWdwuR8KadWu1frjL3JQImpwq.png?r=fcd" alt="" />
                         </div>
-                        <div>
-                            <h1 className="enjoy-tv">Create profiles for kids.</h1>
+                        <div className="text-section">
+                            <h1 className="smart-tv">Create profiles for kids.</h1>
                             <h2 className="smart-tv">Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</h2>
                         </div>
                     </div>

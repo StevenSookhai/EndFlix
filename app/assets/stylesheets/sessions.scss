@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .session-container{
+    // margin-bottom: 100px;
  
 }
 .session-form{
@@ -22,6 +23,7 @@
     padding-top: 50px;
     padding-right: 80px;
     padding-left: 80px;
+    // margin-bottom: 100px;
     
   h1,input, button {
     width: 90%;
@@ -106,6 +108,11 @@
   h1 {
     font-size: 30px;
     margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 25px;
+    margin-bottom:70px;
   }
 
   input {
