@@ -1,9 +1,9 @@
 body{
-    background-color: rgb(0, 0, 0);
+    background-color: #141414;
     width: 100%;
     height: 100%;
     position: absolute;
-    border: 5px solid black;
+    // border: 5px solid black;
 }
 .profile-container{
     // border: 5px solid red;
@@ -11,15 +11,12 @@ body{
     width: 50%;
     height: 50%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
     padding-top: 10%;
-    // margin-top: 2%;
-    
-
-
+    margin-top: 0;
 }
 
 .profile-list{
@@ -42,12 +39,12 @@ body{
     // margin-right: 10px;
 }
 .manage-container{
-    // display: flex;
-    // justify-content: center;
-    // border: 4px solid red;
-    // margin: auto;
-    margin-top: 60px;
 
+    display: flex;
+    justify-content: center;
+    // border: 4px solid red;
+    margin: 0 auto;
+    margin-top: 60px;
 
     .manage-profile {
     border: 1px solid gray;
@@ -58,10 +55,17 @@ body{
     // padding: 5px;
     // background-color: rgb(68, 68, 68,);
     font-size: 30px;
-    &hover{
-        color: white;
-    }
 }
+}
+.manage-profile {
+    border: 1px solid gray;
+    color: gray;
+    background: none;
+    cursor: pointer;
+    font-weight: 200;
+    // padding: 5px;
+    // background-color: rgb(68, 68, 68,);
+    font-size: 30px;
 }
 
 
@@ -71,6 +75,8 @@ body{
     // border: solid 4px red;
     font-size: 50px;
     color: white;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .manage-profile{
@@ -80,4 +86,223 @@ body{
 .profile-index-item-container img:hover{
     border: 5px solid white;
 
+}
+// .add_img{
+//     border: 5px solid red;
+// }
+.add-img:hover{
+    border: 5px solid white;
+}
+.manage-container:hover{
+    border: white;
+}
+.manage-profile:hover{
+        color: white;
+}
+
+.profile-form-container{
+    border: 4px sold red;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // label{
+    //     border: 4px solid red;
+    //     // margin-top: 20%;
+    //     margin-left: 300px;
+    //     align-content: center;
+    //     color: red;
+    //     size: 200px;
+    //     margin-bottom: 100px;
+    // }
+
+    // img{
+    //     border: 4px solid red;
+    //     margin: auto;
+    //     margin-left: 100px;
+    //     margin-top: 220px;
+    // }
+
+    
+}
+
+// .p-container{
+//     // border: 4px sold red;
+
+// }
+
+// .form-buttons{
+//     // margin-top: 400px;
+//     display: flex;
+//     justify-content: space-evenly;
+//     // border: 4px solid red;
+//     color: gray;
+//     background: none;
+//     cursor: pointer;
+//     font-weight: 200;
+//     // padding: 5px;
+//     // background-color: rgb(68, 68, 68,);
+//     font-size: 30px;
+// }
+
+// .img-label{
+//         // border: 6px solid red;
+//         margin-top: 100px;
+//         display: flex;
+//         justify-content: space-evenly;
+//         flex-direction: row;
+//         margin-bottom: 200px;
+    
+//     label {
+//         margin-top: 50px;
+//         align-content: center;
+//         align-items: center;
+//         // font-size: 50px;
+//         // margin-bottom: 200px;
+//     }
+//     input{
+//         padding: 25px;
+//     }
+
+//     }
+
+.edit-title{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid rgba(128, 128, 128, .5);
+}
+
+.edit-title h1{
+     font-size: 50px;
+     margin-bottom: 15px;
+     color: white;
+}
+
+.edit-content{
+    // border: 4px solid red;
+    margin: 0 auto;
+    padding-top: 10%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-form{
+    // border: 4px solid red;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.input-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.profile-form img {
+    // border: 4px solid red;
+
+     width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.form-input {
+    border: 5px solid red;
+    position: relative;
+    width: 400px;
+    height: 45px;
+    background: gray;
+    border: none;
+    color: white;
+    font-size: 24px;
+}
+
+.form-buttons{
+    // border: 4px solid red;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 2px solid rgba(128, 128, 128, .5);
+}
+
+.save-button{
+    color: black;
+    background: white;
+    margin-top: 8%;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.save-button:hover{
+    background: red;
+    color: white;
+}
+
+.cancel-button{
+    color: gray;
+    border: 1px solid gray;
+    background: none;
+    width: 130px;
+    margin-top: 8%;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.cancel-button:hover{
+    border: 1px solid white;
+    color: white;
+}
+
+.delete-button{
+ color: gray;
+    background: none;
+    margin-top: 8%;
+    width: 200px;
+    border: 1px solid gray;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    border: 1px solid white;
+    color: white;
+}
+
+.create-container{
+    margin: 0 auto;
+    padding-top: 10%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.create-button{
+    color: black;
+    background: white;
+    margin-top: 8%;
+    padding: 10px;
+    width: 140px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.create-button:hover{
+    background: red;
+    color: white;
 }

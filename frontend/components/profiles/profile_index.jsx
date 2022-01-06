@@ -30,9 +30,9 @@ export default class ProfileIndex extends React.Component{
         
     }
     componentDidUpdate(){
-        if (this.props.currentProfile) {
-            this.props.history.push('/browse')
-        }
+        // if (this.props.currentProfile) {
+        //     this.props.history.push('/browse')
+        // }
     }
     click(profile){
         if(this.state.manage){
@@ -78,26 +78,29 @@ export default class ProfileIndex extends React.Component{
                         {/* <a href="/">LOOSDSAD</a> */}
                     </div>
                     <div className="profiles-bg"></div>
+                    <h1 className="profile-header">Who's Watching?</h1>
                     <div className="profile-container">
-                        <h1 className="profile-header">Who's Watching?</h1>
                         <p>Welcome, {this.props.currentUser.email}</p>
                         <ul className="profile-list">
                             {
-
                                 this.props.profiles
                                     .map(profile => <li className="p-lis"><ProfilesIndexItem profile={profile} findProfile={this.props.findProfile} /></li>)
                             }
                         </ul>
+                        {/* <button>Manage Profiles </button> */}
+                        {/* <button onClick={this.create}>Add Profile</button> */}
+                        <div width="144px" height="144px" className="add-img" onClick={this.create}>
+                            <img  width="144px" height="144px" src="https://img.icons8.com/emoji/48/000000/plus-emoji.png" />
+                        </div>
+                    </div>
+
                         <button onClick={this.props.logout}>Log Out</button>
 
-                        {/* <button>Manage Profiles </button> */}
                         <div className="manage-container">
-                            <button onClick={this.manage}>Manage Profiles</button>
-                            <button onClick={this.create}>Add Profile</button>
+                        <button className="manage-profile " onClick={this.manage}>Manage Profiles</button>
                             {/* <Link className="manage-profile" to="/manageprofiles">Manage Profiles</Link> */}
                             {/* <Link className="manage-profile" to="/manageprofiles">Manage Profiles</Link> */}
                         </div>
-                    </div>
                 </div>
             )
         }else if(this.state.manage && this.state.formType !== 'Edit'){
@@ -109,8 +112,8 @@ export default class ProfileIndex extends React.Component{
                         {/* <a href="/">LOOSDSAD</a> */}
                     </div>
                     <div className="profiles-bg"></div>
+                    <h1 className="profile-header">Manage Profiles</h1>
                     <div className="profile-container">
-                        <h1 className="profile-header">Who's Watching?</h1>
                         <ul className="profile-list">
                             {
                                 this.props.profiles.map( profile => 
@@ -124,10 +127,10 @@ export default class ProfileIndex extends React.Component{
                             }
                         </ul>
                         <button onClick={this.props.logout}>Log Out</button>
+                    </div>
                         <div className="manage-container">
                             <button onClick={this.manage}>Done</button> 
                          </div>
-                    </div>
                 </div>
             )
         } else if (this.state.formType === 'Edit') {
