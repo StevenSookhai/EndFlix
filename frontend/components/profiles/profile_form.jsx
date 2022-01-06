@@ -6,8 +6,8 @@ class ProfileForm extends React.Component{
         super(props)
         this.state = {
             name: this.props.profile.name
-            // manage: true
         }
+
         this.updateProfile = this.updateProfile.bind(this)
         this.handleSumbit = this.handleSumbit.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
@@ -21,7 +21,6 @@ class ProfileForm extends React.Component{
     updateProfile(e){
         e.preventDefault();
         this.setState({manage: true, name: e.target.value})
-        // debugger
     }
 
     updateInfo(type){
@@ -37,7 +36,7 @@ class ProfileForm extends React.Component{
     handleDelete(){
         this.props.deleteProfile(this.props.profile)
         this.props.cancelAddProfile()
-        this.props.history.push('/profiles')
+        // this.props.history.push('/profiles')
     }
 
     handleEdit(e) {
@@ -46,7 +45,6 @@ class ProfileForm extends React.Component{
         updatedProfile.name = this.state.name
         this.props.updateProfile(updatedProfile) 
         this.props.cancelAddProfile()
-        // }, 0);
     }
 
     render(){
@@ -57,14 +55,12 @@ class ProfileForm extends React.Component{
         if(this.props.formType === 'Edit'){
             return(
                 <div className="edit-container">
-                    {/* <div className="manage-profile">{this.props.profile.name}</div> */}
                     <div className="edit-content">
                         <div className="edit-title">
                             <h1>Edit Profile</h1>
                         </div>
 
                         <form className="profile-form" onSubmit={this.handleEdit}>
-                            {/* <div className="img-label"> */}
                             <div className="input-container">
                                 <img width="144px" height="144px" src={profileImg} alt="" />
                                     <input className="form-input"
@@ -78,7 +74,6 @@ class ProfileForm extends React.Component{
                             <input className="cancel-button" type="submit" onClick={this.props.cancelAddProfile} value="Cancel"/>
                             <input className="delete-button" type="submit" onClick={this.handleDelete} value="Delete Profile"/>
                         </div>
-                            {/* </div> */}
                         </form>
 
                     
@@ -114,7 +109,6 @@ class ProfileForm extends React.Component{
         )
         }
 
-        // debugger
         
     }
 }

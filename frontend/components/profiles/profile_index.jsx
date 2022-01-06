@@ -53,9 +53,12 @@ export default class ProfileIndex extends React.Component{
 
     cancelAddProfile(){
         this.setState({ profile: { name: '' }, formType: '', show: true, manage: false })
+        //tiny bug when deleting profile, this is a temp fix 
+        window.location.reload(true) 
     }
 
     render(){
+        // debugger
         const profileImg = "https://occ-0-444-448.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFHJqNUeGyz6qFesBt8U7Z_N7JqBoPCztz6BZH8Aq3TRyG6-G7e2mW1rCWsvUywSWN5mCnItuJ2xCg9cROXU4MHZhug.png?r=a41"
         const profiles = this.props.profiles.map( profile => {
             <li onclick={this.click(profile)}

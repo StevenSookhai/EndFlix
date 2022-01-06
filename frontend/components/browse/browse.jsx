@@ -13,6 +13,7 @@ export default class Browse extends React.Component{
     }
     render(){
         // debugger
+         if (this.props.currentProfile === undefined) return null
         return(
             <div>
                 <div className="manage-profile">{this.props.currentProfile.name}</div>
