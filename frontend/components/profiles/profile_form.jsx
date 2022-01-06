@@ -5,7 +5,7 @@ class ProfileForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            name: ''
+            name: this.props.profile.name
             // manage: true
         }
         this.updateProfile = this.updateProfile.bind(this)
@@ -37,6 +37,7 @@ class ProfileForm extends React.Component{
     handleDelete(){
         this.props.deleteProfile(this.props.profile)
         this.props.cancelAddProfile()
+        this.props.history.push('/profiles')
     }
 
     handleEdit(e) {

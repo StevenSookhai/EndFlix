@@ -75,61 +75,62 @@ export default class ProfileIndex extends React.Component{
 
                     <div>
                         <img src={logo} className="logo" />
-                        {/* <a href="/">LOOSDSAD</a> */}
                     </div>
-                    <div className="profiles-bg"></div>
-                    <h1 className="profile-header">Who's Watching?</h1>
+
                     <div className="profile-container">
-                        <p>Welcome, {this.props.currentUser.email}</p>
-                        <ul className="profile-list">
-                            {
-                                this.props.profiles
-                                    .map(profile => <li className="p-lis"><ProfilesIndexItem profile={profile} findProfile={this.props.findProfile} /></li>)
-                            }
-                        </ul>
-                        {/* <button>Manage Profiles </button> */}
-                        {/* <button onClick={this.create}>Add Profile</button> */}
-                        <div width="144px" height="144px" className="add-img" onClick={this.create}>
-                            <img  width="144px" height="144px" src="https://img.icons8.com/emoji/48/000000/plus-emoji.png" />
+
+                        <h1 className="profile-header">Who's Watching?</h1>
+                        <div className="profile-list">
+                            <div className="ul-list-profile">
+                                <ul >
+                                    {
+                                        this.props.profiles
+                                            .map(profile => <li className="p-lis"><ProfilesIndexItem profile={profile} findProfile={this.props.findProfile} /></li>)
+                                    }
+                                </ul>
+                            </div>
+                            
+                            <div className="add-img" onClick={this.create}>
+                                <img  width="150px" height="150px" src="https://img.icons8.com/emoji/48/000000/plus-emoji.png" />
+                            </div>
                         </div>
+
                     </div>
-
-                        <button onClick={this.props.logout}>Log Out</button>
-
-                        <div className="manage-container">
-                        <button className="manage-profile " onClick={this.manage}>Manage Profiles</button>
-                            {/* <Link className="manage-profile" to="/manageprofiles">Manage Profiles</Link> */}
-                            {/* <Link className="manage-profile" to="/manageprofiles">Manage Profiles</Link> */}
-                        </div>
+                            <div className="manage-container">
+                            <button className="manage-profile " onClick={this.manage}>Manage Profiles</button>
+                            </div>
                 </div>
             )
         }else if(this.state.manage && this.state.formType !== 'Edit'){
             return(
                 <div>
-
                     <div>
                         <img src={logo} className="logo" />
-                        {/* <a href="/">LOOSDSAD</a> */}
                     </div>
-                    <div className="profiles-bg"></div>
-                    <h1 className="profile-header">Manage Profiles</h1>
                     <div className="profile-container">
-                        <ul className="profile-list">
-                            {
-                                this.props.profiles.map( profile => 
-                                    <li className="profile-index-item-container"
-                                     onClick={this.click(profile)}
-                                        key={profile.id}>
-                                        <img src={profileImg}/>
-                                        <p>{profile.name}</p>
-                                    </li>
-                                )
-                            }
-                        </ul>
-                        <button onClick={this.props.logout}>Log Out</button>
+
+                    <h1 className="profile-header">Manage Profiles</h1>
+                        <div className="profile-list">
+                            <div className="ul-list-profile-manage">
+                            <ul >
+                                {
+                                    this.props.profiles.map( profile => 
+                                        <li  className="profile-index-item-container"
+                                        onClick={this.click(profile)}
+                                            key={profile.id}
+                                           >
+                                            <img width="150px" height="150px" src={profileImg}/>
+                                            <p>{profile.name}</p>
+                                        </li>
+                                    )
+                                }
+                                </ul>
+                            </div>
+                    </div>
+                        {/* <button onClick={this.props.logout}>Log Out</button> */}
                     </div>
                         <div className="manage-container">
-                            <button onClick={this.manage}>Done</button> 
+                        <button className="done-button " onClick={this.manage}>Done</button> 
                          </div>
                 </div>
             )
