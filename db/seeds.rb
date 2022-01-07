@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'open-uri'
+require "open-uri"
 
 User.destroy_all
 Profile.destroy_all
@@ -13,4 +13,6 @@ Video.destroy_all
 
 User.create!(email: "Email", password: "Password")
 
-Video.create!(title: "test", description: "test", year: 2002, genre: "test")
+v = Video.create!(title: "test", description: "test", year: 2002, genre: "test")
+# v.video_file.attach(io: open("https://endflix-seeds.s3.amazonaws.com/TestVid.mp4"), filename: "TestVid.mp4" )
+v.video_file.attach(io: URI.open("https://endflix-seeds.s3.amazonaws.com/TestVid.mp4"),filename: 'TestVid.mp4')

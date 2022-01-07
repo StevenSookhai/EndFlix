@@ -1,5 +1,5 @@
 .featured-movie-container{
-    background-color: rgb(153, 148, 216);
+    background-color: rgb(7, 7, 7);
     z-index: -2;
     // position: relative;
     // margin-bottom: 40px;
@@ -7,6 +7,11 @@
     border: 5px solid red;
     display: flex;
     flex-direction: column;
+
+    video{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .featured-movie-content{
@@ -15,6 +20,7 @@
     width: 100%;
 }
 .featured-tile-des{
+    color: white;
     display: flex;
     flex-direction: column;
 }
