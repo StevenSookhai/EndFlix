@@ -11,10 +11,10 @@ export default class FeaturedMovie extends React.Component{
         return(
             <div>
             <div className="featured-movie-container">
-                <div>
-                        {/* <video autoPlay={true}
-                            muted={true} src={this.props.video.video}></video> */}
-                </div>
+                {/* <div> */}
+                        <video autoPlay={true}
+                            muted={true} src={this.props.video.video}></video>
+                {/* </div> */}
                 <div className="featured-movie-content">
                     <div className="featured-tile-des">
                             <div className="feature-title">

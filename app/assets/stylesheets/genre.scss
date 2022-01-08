@@ -1,9 +1,11 @@
 .genre{
-    border: 4px solid rgb(87, 75, 252);
+    // border: 4px solid rgb(87, 75, 252);
     // position: absolute;
     // height: 100px;
     // margin-bottom: 100px;
     // z-index: 2;
+    
+    // margin-left: 100px;
     display: flex;
     flex-direction: column;
 
@@ -15,24 +17,135 @@
             margin: 10px 0 10px;
         }
 
-      ul {
-      display: flex;
-      margin: 0 0 50px 0;
-      overflow-x: scroll;
-      cursor: grabbing;
-      }
-    //   ul::-webkit-scrollbar{
-    //       display: none;
+    //   ul {
+    //   display: flex;
+    //   margin: 0 0 50px 0;
+    //   overflow-x: scroll;
+    //   border: 4px solid blueviolet;
+    //   position: relative;
+    // //   overflow: hidden
+    // //   cursor: grab;
+    //         li{
+    //            margin: 0 5px 0 0; 
+    //         }
     //   }
-        .genre-item {
+    //   ul::-webkit-scrollbar{
+    //     //   display: none;
+    //     // width: 0;
+    //     // background: transparent;
+    //   }
+      .genre-list-container{
+          font-size: 12px;
+          font-weight: bold;
+        //    border: 2px solid rgb(182, 49, 49);
+            margin-right: 10px;
+          border-radius: 4px;
+             width: 315px;
+            height: 200px;
           display: flex;
           justify-content: center;
           align-items: center;
           position: relative;
-          border: 2px solid white;
-          font-size: 12px;
-          margin-right: 8px;
-          min-width:315px;
-          min-height: 200px;
+      }
+        .genre-item {
+        border: 2px solid white;
+
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
+        //   position: relative;
+        //   border: 2px solid white;
+        //   font-size: 12px;
+        //   margin-right: 8px;
+        //   min-width:315px;
+        //   min-height: 200px;
+        //   border-radius: 5px;
+
+              width: 315px;
+              height: 200px;
+              border-radius: 4px;
         }
+
+        .genre-item:hover{
+           display:block;
+            z-index: 4;
+            position: absolute;
+            bottom: 0px;
+            // width: 400px;
+            // height: 350px;
+             transform: scale(1.5);
+            border-radius: 4px;
+            // top: -70px;
+            transition: opacity 300ms ease-out, border-radius 200ms ease-out;
+        }
+}
+
+.genre-list{
+    display: flex;
+      margin: 0 0 50px 0;
+    //   overflow-x: scroll;
+    //   border: 4px solid blueviolet;
+    //   position: relative;
+    // overflow: hidden;
+    justify-content: space-evenly;
+    margin-left: 5vw ;
+    margin-right: 5vw ;
+}
+
+
+.square {
+//  border: 2px solid rgb(255, 0, 0);
+  width: 250vw;
+  height: 120px;
+  margin-right: 10px;
+  transition: transform 100ms ease-out, border-radius 200ms ease-out;
+}
+
+.square .cover {
+ object-fit: cover;
+  background: white;
+  width: 100%;
+//   height:150px;
+  border-radius: 10px 10px 0 0;
+  background-size: cover!important;
+  background-position: center!important;
+}
+
+.square .text {
+  display: none;
+  background: #181818;
+  color: #fff;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: opacity 300ms ease-out, border-radius 200ms ease-out;
+  border-radius: 0 0 10px 10px;
+}
+
+.square:hover {
+  border-radius: 10px;
+  transform: scale(1.4,2);
+//   width: 350vw;
+
+//   height: 420px;
+  box-shadow: 0 0 2px #000a;
+}
+
+.square:hover .text {
+  display: block;
+}
+
+.genre-list{
+    overflow: visible;
+    // overflow-x: scroll;
+    // overflow-y: visible
+}
+
+.modal{
+    // display: block;
+    z-index: 10;
+    background-color: white;
+    width: 60%;
+    height: 50%;
 }
