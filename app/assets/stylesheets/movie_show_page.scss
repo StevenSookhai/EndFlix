@@ -12,52 +12,176 @@
     display: flex;
     justify-content: center;
     overflow-y: scroll;
+                border: 3px solid red;
+
     
 
     .modal-content{
         top: 40px;
+        border-radius: 11px;
         // overflow-y: scroll;
         display: flex;
         flex-direction: column;
         position: relative;
+        // justify-content: center;
+        // overflow-wrap: break-word;
+        overflow: hidden;
+        background-color:#181818;
+        border: 3px solid rgb(22, 8, 216);
+
+        
+        // background: transparent;
+        // background: 
+        //     linear-gradient( hsla(300,50%,50%,1), 50%, black);
+            .overlay-gradient{
+            position: absolute;
+            background: transparent;
+            background: 
+            linear-gradient( to top, #141414, 80%, transparent);
+            opacity: .5;
+            z-index: 0;
+            width: 100%;
+            height: 60%;
+                border: 3px solid rgb(43, 255, 0);
+
+            }
+
         
 
         .movie-exit-button{
             color: red;
             // width: 50px;
-            // height: 50px;
+            // height: 50px;   
+            position: absolute;
+            z-index: 3;
+            // float: right;
+            right: 0;
+            margin-right: 1vw;
+            margin-top: 1vw;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
+                border: 3px solid rgb(255, 251, 0);
+
+
+                button{
+                    color: white;
+                    background-color: #181818;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    font-size: 25px;
+                    font-weight: 200;
+                    border: none;
+                border: 3px solid red;
+
+                }
         }
 
         video{
+                border: 3px solid rgb(255, 0, 221);
+
             width: 100%;
             height: 60%;
-            border-radius: 5px;
+            border-radius: 10px;
+            
+            
         }
 
         .movie-title-play{
-                h1{
-                    color: red;
+            margin-left: 2vw;
+            margin-top: 13vw;
+            position: absolute;
+            z-index: 3;
+            // height: 50%;
+            // width: 50%;
+            // border: 4px solid red;
+            display: flex;
+                border: 3px solid rgb(0, 225, 255);
+
+            // justify-content: center;
+            flex-direction: column;
+
+                .movie-show-title{
+                    width: 80%;
+                    height: 150px;
+                    // border: 4px solid white;
+                    display: flex;
+                    // height: 50%;
+                    justify-content: center;
+                        // overflow: hidden;
+                border: 3px solid rgb(234, 0, 255);
+
+
+
+
+                    h1{
+                        // height: 40px;
+                        font-size: 60px;
+                        color: red;
+                border: 3px solid rgb(110, 84, 84);
+
+                    }
                 }
 
                 .movie-show-buttons{
+                    //   box-shadow: 0 0 5px 10px #555;
                     display: flex;
-
+                    // margin-top: 20px;
                         .play-movie-button{
-                            color: red;
+                            margin-top: 8px;
+                            color: rgb(0, 0, 0);
+                            padding: 10px;
+                            width: 150px;
+                            border-radius: 5px;
+                            font-size: 20px;
+                            margin-right: 2px;
+                border: 3px solid red;
+
+
                         }
 
                         .add-to-list-button{
-                            color: red;
+                            margin-top: 10px;
+                            // color: red;
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                            border: 1px solid rgb(68, 68, 68);
+                            color: gray;
+                            background: none;
+                            z-index: 3;
+                            cursor: pointer;
+                            font-weight: 200;
+                            background-color: #2C2C2E;
+                            font-size: 30px;
+                border: 3px solid red;
+                            
                         }
                 }
             
         }
 
         .movie-show-description{
+            // z-index: 4;
+            // position: absolute;
+            display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            border: 5px solid white;
+            width: 50%;
+            height: 80%;
             color: white;
-            font-size: 50px;
+            font-size: 30px;
+            // overflow-wrap: break-word;
+            // text-align: center;
+
+            span{
+                color: white;
+                border: 3px solid red;
+                // width: 100%;
+                // height: 100%;
+                
+            }
         }
     }
 }

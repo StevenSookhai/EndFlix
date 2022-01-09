@@ -22,59 +22,35 @@ export default class MovieShowPage extends React.Component{
         this.props.hoveredExit()
     }
         render(){
+            if(!this.props.video) return null
             return(
             <div className="modal">
                 <div className="modal-content">
-                    <div className="movie-exit-button">
-                        
-                    <button onClick={this.handleModal} className="Modal-button">close</button>
-                    </div>
+                        <div className="overlay-gradient"></div>
+                        <div className="movie-exit-button">
+                            
+                        <button  onClick={this.handleModal} className="Modal-button">X</button>
+                        </div>
                     
                     {/* <img src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
                    
                         <video autoPlay={true}
                             muted={true} src={this.props.video.video}>
                         </video>
-                    <div className="movie-title-play">
-                            <h1>Movie Show Page</h1>
-                            <div className="movie-show-buttons">
-                                <button className="play-movie-button">Play</button>
-                                <button className="add-to-list-button">+</button>
-                            </div>
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
-                    <div className="movie-show-description">
-                        {this.props.video.description}
-                    </div>
+                        <div className="movie-title-play">
+                                <div className="movie-show-title">
+                                    <h1>Movie Show Page</h1>
+                                </div>
+                                
+                                <div className="movie-show-buttons">
+                                    <button className="play-movie-button">Play</button>
+                                    <button className="add-to-list-button">+</button>
+                                </div>
+                        </div>
+                        <div className="movie-show-description">
+                            <span>{this.props.video.description}sadssssssssss lore</span> 
+                            {/* <p>snkjasnkass Lorem,</p> */}
+                        </div>
                 </div>
             </div>
             )
