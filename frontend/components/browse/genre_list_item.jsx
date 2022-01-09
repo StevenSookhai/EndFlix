@@ -13,9 +13,15 @@ export default class GenreListItem extends React.Component{
         this.handleHover = this.handleHover.bind(this)
         this.handleHoverExit = this.handleHoverExit.bind(this)
     }
+    componentDidMount(){
+    }
+    
     handleHover(){
-        this.setState({hovered: true})
-        // console.log(this.state.hovered)
+        // setTimeout(() => {
+            
+            // }, 500);
+            // console.log(this.state.hovered)
+                this.setState({hovered: true})
     }
     handleHoverExit(){
         this.setState({ hovered: false })

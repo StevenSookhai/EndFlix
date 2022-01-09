@@ -1,0 +1,63 @@
+.modal{
+    // display: block;
+    z-index:  2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.534);
+    // width: 60%;
+    // height: 50%;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    
+
+    .modal-content{
+        top: 40px;
+        // overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+
+        .movie-exit-button{
+            color: red;
+            // width: 50px;
+            // height: 50px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        video{
+            width: 100%;
+            height: 60%;
+            border-radius: 5px;
+        }
+
+        .movie-title-play{
+                h1{
+                    color: red;
+                }
+
+                .movie-show-buttons{
+                    display: flex;
+
+                        .play-movie-button{
+                            color: red;
+                        }
+
+                        .add-to-list-button{
+                            color: red;
+                        }
+                }
+            
+        }
+
+        .movie-show-description{
+            color: white;
+            font-size: 50px;
+        }
+    }
+}
