@@ -1,9 +1,14 @@
 import { connect } from "react-redux";
 import FeaturedMovie from "./featured_movie";
+import { withRouter } from "react-router-dom";
 
-const mstp = (state) => ({
-    video: state.entities.videos[11]
-})
+const mstp = (state) => {
+    // debugger
+    const rndInt = Math.floor(Math.random() * Object.values(state.entities.videos).length - 1) + 0
+    return{
+        video: state.entities.videos[rndInt]
+    }
+}
 
 
-export default connect(mstp)(FeaturedMovie)
+export default withRouter(connect(mstp)(FeaturedMovie))

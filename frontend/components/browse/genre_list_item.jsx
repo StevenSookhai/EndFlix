@@ -14,6 +14,7 @@ export default class GenreListItem extends React.Component{
         this.handleHoverExit = this.handleHoverExit.bind(this)
     }
     componentDidMount(){
+        // this.props.fetchAllVideos()
     }
     
     handleHover(){
@@ -31,6 +32,10 @@ export default class GenreListItem extends React.Component{
         this.setState({showModal: !this.state.showModal} )
     }
     render(){
+        if(this.props.video === undefined) return null
+        // debugger
+        // const img = this.props.video.thumbnailURL ? this.props.video.thumbnailURL : "https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg"
+        const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/sq_914x514.jpg"
         if (!this.state.showModal && !this.state.hovered){
             return(
                 <div onClick={this.showModal}
@@ -38,15 +43,21 @@ export default class GenreListItem extends React.Component{
                      onMouseEnter={this.handleHover}
                      onMouseLeave={this.handleHoverExit}>
                     {/* <div className="cover"></div> */}
-                    <img className="cover" src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" />
+                    <img className="cover" src={img}  />
                     <div className="text">
-                        Heh Css
+                        <button>P</button>
+                        <button>+</button>
+
+                        <div>
+                            <button>-</button>
+                        </div>
                     </div>
+                    
                 </div>
             )
         }else if(this.state.showModal && this.state.hovered){
             return (
-                < MovieShowPageContainer hoveredExit={this.handleHoverExit} hovered={this.handleHover} showModal={this.showModal} />
+                < MovieShowPageContainer video={this.props.video} hoveredExit={this.handleHoverExit} hovered={this.handleHover} showModal={this.showModal} />
             )
         } else if (!this.state.showModal && this.state.hovered){
             return(
@@ -55,11 +66,30 @@ export default class GenreListItem extends React.Component{
                 onMouseEnter={this.handleHover}
                 onMouseLeave={this.handleHoverExit}>
                 {/* <div className="cover"></div> */}
+
                 {/* <img className="cover" src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
-                <video className="cover" autoPlay={true}
-                        muted={true} src="https://endflix-seeds.s3.amazonaws.com/ShangChi.mp4"></video>
+                {/* comment this back in */}
+                {/* <video className="cover" autoPlay={true}
+                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video> */}
+                    <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" />
+
                 <div className="text">
-                    Heh Css
+                    <div className="movie-card-buttons">
+                        <div className="right-btns">
+                        <button className="play-card-btn">P</button>
+                        <button className="add-to-list-btn">+</button>    
+                        </div>
+                        <div>
+                            <button className="movie-show-page-btn">-</button>
+                        </div>
+                    </div>
+                    <div className="movie-card-genre-list">
+                        <ul className="genre-movie-card-list"> 
+                            <li>
+                                    {this.props.video.genre}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             )

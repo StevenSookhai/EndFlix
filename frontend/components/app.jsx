@@ -10,6 +10,7 @@ import { Switch, Redirect } from "react-router-dom";
 import ProfileIndexContainer from "./profiles/profile_index_container";
 // import NewProfileFormContainer from "./profiles/new_profile_form_container";
 import BrowseContainer from "./browse/browse_container";
+import VideoWatchPageContainer from "./videos/video_watch_page_container";
 
 const App = () => (
     <div>
@@ -23,6 +24,7 @@ const App = () => (
         <ProtectedRoute path='/profiles' component={ProfileIndexContainer} /> 
         {/* <ProtectedRoute path='/manageprofiles' component={NewProfileFormContainer} />  */}
         <ProtectedRoute path='/browse' component={BrowseContainer} /> 
+        <ProtectedRoute path='/watch/:videoId' component={VideoWatchPageContainer} /> 
         <AuthRoute path="/" component={Splash}/>
         </Switch>
     </div>

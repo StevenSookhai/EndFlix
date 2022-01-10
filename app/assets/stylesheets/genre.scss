@@ -46,6 +46,7 @@
           justify-content: center;
           align-items: center;
           position: relative;
+          z-index: 2;
       }
         .genre-item {
         border: 2px solid white;
@@ -95,8 +96,10 @@
 
 .square {
 //  border: 2px solid rgb(255, 0, 0);
+          z-index: 2;
+
   width: 250vw;
-  height: 120px;
+  height: 150px;
   margin-right: 10px;
   transition: transform 100ms ease-out, border-radius 200ms ease-out;
 }
@@ -118,16 +121,23 @@
   background: #181818;
   color: #fff;
   width: 100%;
-  height: fit-content;
+  height: 40%;
   padding: 5px;
   box-sizing: border-box;
   transition: opacity 300ms ease-out, border-radius 200ms ease-out;
   border-radius: 0 0 10px 10px;
 }
 
+.movie-card-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
 .square:hover {
   border-radius: 10px;
   transform: scale(1.4,2);
+          z-index: 3;
+
 //   transition-delay: .1s;
 //   width: 350vw;
 
@@ -145,3 +155,64 @@
     // overflow-y: visible
 }
 
+.genre-title{
+  margin-left: 10vw;
+}
+
+.play-card-btn{
+  height: 30px;
+                            width: 35px;
+                            border-radius: 50%;
+                            border: 1px solid rgb(68, 68, 68);
+                            color: rgb(0, 0, 0);
+                            background: none;
+                            z-index: 3;
+                            cursor: pointer;
+                            font-weight: 200;
+                            background-color: #ffffff;
+                            // background-color: #2C2C2E;
+                            font-size: 20px;
+                            margin-right: 5px;
+}
+
+.add-to-list-btn{
+  height: 30px;
+                            width: 35px;
+                            border-radius: 50%;
+                            border: 1px solid rgb(68, 68, 68);
+                            color: rgb(255, 255, 255);
+                            background: none;
+                            z-index: 3;
+                            cursor: pointer;
+                            font-weight: 100;
+                            // background-color: #ffffff;
+                            background-color: #2C2C2E;
+                            font-size: 20px;
+                            margin-right: 5px;
+}
+
+.movie-show-page-btn{
+  height: 30px;
+                            width: 35px;
+                            border-radius: 50%;
+                            border: 1px solid rgb(68, 68, 68);
+                            color: rgb(255, 255, 255);
+                            background: none;
+                            z-index: 3;
+                            cursor: pointer;
+                            font-weight: 100;
+                            // background-color: #ffffff;
+                            background-color: #2C2C2E;
+                            font-size: 20px;
+                            margin-right: 5px;
+}
+
+.movie-card-genre-list{
+  margin-top: 5px;
+  display: flex;
+    li{
+      display: flex;
+      font-size: 10px;
+      margin-left: 5px;
+    }
+}

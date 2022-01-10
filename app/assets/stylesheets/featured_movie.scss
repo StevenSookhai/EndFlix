@@ -1,6 +1,6 @@
 .featured-movie-container{
     background-color: rgb(7, 7, 7);
-    z-index: -2;
+    z-index: 1;
     position: relative;
     // margin-bottom: 40px;
     height: 100vh;
@@ -17,20 +17,32 @@
         z-index: -2;
 
     }
+
+    img{
+         position: absolute;
+        width: 100%;
+        // height: 100%;
+        // size: 100%;
+        z-index: -2;
+    }
 }
 
 .featured-movie-content{
     // border: 5px solid rgb(0, 255, 106);
     margin-top: 20%;
+        z-index: 5;
     width: 100%;
 }
 .featured-tile-des{
     color: white;
     display: flex;
+        z-index: 5;
+
     flex-direction: column;
 }
 
 .featured-button{
+    z-index: 5;
     display: flex;
     justify-content: space-between;
 }
@@ -38,8 +50,11 @@
 
 .features-play-info{
     // border: 5px solid red;
+    margin-left: 60px;
     width: 500px;
     display: flex;
+        z-index: 5;
+
     align-content: center;
     justify-content: flex-start;
     // margin-top: 10px;
@@ -53,7 +68,7 @@
         // border: none;
         // font-size: 1vw;
         // font-weight: bold;
-        
+        // z-index: 5;
         width: 120px;
         margin-left: 38px;
         margin-right: 10px;
@@ -66,6 +81,10 @@
         margin-right: 10px;
         font-size: 30px;
         width: 165px;
+        background-color: #545455;
+        color: white;
+        font-size: 15px;
+
     }
 
 }   
@@ -81,12 +100,30 @@ margin-top: 10px;
 margin-right: 190px;
 margin-bottom: 5px;
 
+    button{
+height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(68, 68, 68);
+    color: rgb(255, 255, 255);
+    background: none;
+    // z-index: 3;
+    cursor: pointer;
+    border-color: white;
+    font-weight: 100;
+                            // background-color: #ffffff;
+    // background-color: #2C2C2E;
+     font-size: 20px;
+     margin-right: 5px;
+    }
+
+
 }
 
 .featured-tile-des{
 // border: 5px solid gold;
 display: flex;
-width: 40%;
+width: 30%;
 // height: 200px;
 justify-content: center;
 // align-content: center;
@@ -97,14 +134,16 @@ margin-bottom: 20px;
 
 .feature-title
 {
+    margin-left: 50px;
     // border: 5px sold red;
-    font-size: 70px;
+    font-size: 60px;
 
 }
 }
 
 
 .feature-description{
+    margin-top: 20px;
     margin-left: 100px;
-    font-size: 70px;
+    font-size: 20px;
 }
