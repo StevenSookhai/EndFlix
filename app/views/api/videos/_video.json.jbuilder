@@ -1,2 +1,3 @@
 json.extract! video, :title, :description, :year, :genre
-json.video url_for(video.video_file)
+json.videoURL url_for(video.video)
+json.thumbnailURL url_for(video.thumbnail)

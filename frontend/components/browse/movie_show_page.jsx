@@ -35,7 +35,7 @@ export default class MovieShowPage extends React.Component{
                     {/* <img src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
                    
                         <video autoPlay={true}
-                            muted={true} src={this.props.video.video}>
+                            muted={false} src="https://endflix-seeds.s3.amazonaws.com/shangchi2.mp4">
                         </video>
                         <div className="movie-title-play">
                                 <div className="movie-show-title">

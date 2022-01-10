@@ -33,8 +33,8 @@ export default class Genre extends React.Component{
                 <div className="genre">
                     <h2>Genre 3</h2>
                     <div className="genre-list">
-                            <GenreListItem /> 
-                            <GenreListItem /> 
+                        <GenreListItem img={"https://endflix-seeds.s3.amazonaws.com/shangchitn_1_914x514.jpeg"}/> 
+                        <GenreListItem img={"https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg"}/> 
                             <GenreListItem /> 
                             <GenreListItem /> 
                             <GenreListItem /> 

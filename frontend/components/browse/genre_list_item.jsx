@@ -57,7 +57,7 @@ export default class GenreListItem extends React.Component{
                 {/* <div className="cover"></div> */}
                 {/* <img className="cover" src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
                 <video className="cover" autoPlay={true}
-                    muted={true} src="https://endflix-seeds.s3.amazonaws.com/TestVid.mp4"></video>
+                        muted={true} src="https://endflix-seeds.s3.amazonaws.com/ShangChi.mp4"></video>
                 <div className="text">
                     Heh Css
                 </div>

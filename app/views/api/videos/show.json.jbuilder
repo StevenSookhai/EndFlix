@@ -1,2 +1,3 @@
 json.partial! 'api/videos/video', video: @video
-json.video url_for(@video.video_file)
+json.videoURL url_for(@video.video)
+json.thumbnailURL url_for(@video.thumbnail)

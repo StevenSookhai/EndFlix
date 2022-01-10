@@ -13,7 +13,7 @@ export default class FeaturedMovie extends React.Component{
             <div className="featured-movie-container">
                 {/* <div> */}
                         <video autoPlay={true}
-                            muted={true} src={this.props.video.video}></video>
+                        muted={true} src="https://endflix-seeds.s3.amazonaws.com/shangchi2.mp4"></video>
                 {/* </div> */}
                 <div className="featured-movie-content">
                     <div className="featured-tile-des">

@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     overflow-y: scroll;
-                border: 3px solid red;
+                // border: 3px solid red;
 
     
 
@@ -27,7 +27,7 @@
         // overflow-wrap: break-word;
         overflow: hidden;
         background-color:#181818;
-        border: 3px solid rgb(22, 8, 216);
+        border: black 5px;
 
         
         // background: transparent;
@@ -42,7 +42,7 @@
             z-index: 0;
             width: 100%;
             height: 60%;
-                border: 3px solid rgb(43, 255, 0);
+                // border: 3px solid rgb(43, 255, 0);
 
             }
 
@@ -60,7 +60,7 @@
             margin-top: 1vw;
             display: flex;
             justify-content: center;
-                border: 3px solid rgb(255, 251, 0);
+                // border: 3px solid rgb(255, 251, 0);
 
 
                 button{
@@ -72,7 +72,7 @@
                     font-size: 25px;
                     font-weight: 200;
                     border: none;
-                border: 3px solid red;
+                // border: 3px solid red;
 
                 }
         }
@@ -82,6 +82,8 @@
 
             width: 100%;
             height: 60%;
+            border: none;
+
             border-radius: 10px;
             
             
@@ -96,7 +98,7 @@
             // width: 50%;
             // border: 4px solid red;
             display: flex;
-                border: 3px solid rgb(0, 225, 255);
+                // border: 3px solid rgb(0, 225, 255);
 
             // justify-content: center;
             flex-direction: column;
@@ -109,7 +111,7 @@
                     // height: 50%;
                     justify-content: center;
                         // overflow: hidden;
-                border: 3px solid rgb(234, 0, 255);
+                // border: 3px solid rgb(234, 0, 255);
 
 
 
@@ -118,7 +120,7 @@
                         // height: 40px;
                         font-size: 60px;
                         color: red;
-                border: 3px solid rgb(110, 84, 84);
+                // border: 3px solid rgb(110, 84, 84);
 
                     }
                 }
@@ -135,7 +137,7 @@
                             border-radius: 5px;
                             font-size: 20px;
                             margin-right: 2px;
-                border: 3px solid red;
+                // border: 3px solid red;
 
 
                         }
@@ -154,7 +156,7 @@
                             font-weight: 200;
                             background-color: #2C2C2E;
                             font-size: 30px;
-                border: 3px solid red;
+                // border: 3px solid red;
                             
                         }
                 }
@@ -167,7 +169,7 @@
             display: flex;
             // flex-direction: column;
             // justify-content: center;
-            border: 5px solid white;
+            // border: 5px solid white;
             width: 50%;
             height: 80%;
             color: white;
@@ -177,7 +179,7 @@
 
             span{
                 color: white;
-                border: 3px solid red;
+                // border: 3px solid red;
                 // width: 100%;
                 // height: 100%;
                 
