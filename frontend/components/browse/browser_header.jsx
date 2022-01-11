@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class BrowseHeader extends React.Component {
     constructor(props){
@@ -18,7 +19,8 @@ export default class BrowseHeader extends React.Component {
                             <a href="#">TV Shows</a>
                             <a href="#">Movies</a>
                             <a href="#">New & Popular</a>
-                            <a href="#">My List</a>
+                            {/* <a href="#">My List</a> */}
+                            <Link to="/my-list">My List</Link>
                         </div>
 
                     </div>

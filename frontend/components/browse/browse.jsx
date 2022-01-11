@@ -16,6 +16,7 @@ export default class Browse extends React.Component{
 
     componentDidMount(){
         this.props.fetchAllVideos()
+        this.props.fetchlists()
     }
     render(){
          if (this.props.currentProfile === undefined) return null

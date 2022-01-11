@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     resources :profiles,only: [:create,:update,:destroy,:index]
     resource :profile_session, only: [:create]
     resources :videos, only: [:index, :show]
+
+     resources :profiles do
+        resources :mylists, only: [:index]
+     end
+
+    resources :mylists, only: [:create, :destroy, :index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
