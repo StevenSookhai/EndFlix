@@ -4,7 +4,7 @@ import { fetchAllVideos } from "../../actions/video_actions";
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        video: state.entities.videos[ownProps.match.params.videoId],
+        video: state.entities.videos[ownProps.match.params.videoId]
         // handlePlay: ownProps.handlePlay
     }
 }

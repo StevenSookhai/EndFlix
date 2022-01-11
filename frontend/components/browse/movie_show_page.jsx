@@ -60,14 +60,20 @@ export default class MovieShowPage extends React.Component{
                                 </div>
                                 
                                 <div className="movie-show-buttons">
+                                    <div className="left-btns">
                                     <button  onClick={this.handlePlay} className="play-movie-button">Play</button>
                                     <button className="add-to-list-button">+</button>
+                                    </div>
+
+                                </div>
+                                <div className="movie-show-description">
+                                    <h3>{this.props.video.description}</h3> 
+                                    {/* <p>snkjasnkass Lorem,</p> */}
                                 </div>
                         </div>
-                        <div className="movie-show-description">
-                            <span>{this.props.video.description}sadssssssssss lore</span> 
-                            {/* <p>snkjasnkass Lorem,</p> */}
-                        </div>
+                                    <div className="right-btnss">
+                                    <button className="mutee-btn">M</button>
+                                    </div>
                 </div>
             </div>
             )

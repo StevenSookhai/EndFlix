@@ -39,7 +39,7 @@ export default class GenreListItem extends React.Component{
         if (!this.state.showModal && !this.state.hovered){
             return(
                 <div onClick={this.showModal}
-                     className="square one"
+                     className="square"
                      onMouseEnter={this.handleHover}
                      onMouseLeave={this.handleHoverExit}>
                     {/* <div className="cover"></div> */}
@@ -62,7 +62,7 @@ export default class GenreListItem extends React.Component{
         } else if (!this.state.showModal && this.state.hovered){
             return(
             <div onClick={this.showModal}
-                className="square one"
+                className="square"
                 onMouseEnter={this.handleHover}
                 onMouseLeave={this.handleHoverExit}>
                 {/* <div className="cover"></div> */}
