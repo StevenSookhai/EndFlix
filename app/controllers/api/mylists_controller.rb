@@ -23,11 +23,11 @@ class Api::MylistsController < ApplicationController
   end
 
   def destroy
-    @mylist = Mylist.find_by(id: params[:id])
-    if @mylist && @mylist.destroy()
+    @list = Mylist.find_by(id: params[:id])
+    if @list && @list.destroy()
       render :show
     else
-      render json: @mylist.errors.full_messages
+      render json: @list.errors.full_messages
     end
   end
 

@@ -1,5 +1,6 @@
 import React from "react";
 import GenreListItem from "./genre_list_item";
+import MyListIndex from "../myList/my_list_index";
 export default class Genre extends React.Component{
     constructor(props){
         super(props)
@@ -32,6 +33,12 @@ export default class Genre extends React.Component{
         return(
             <div className="genres-container">
                 <div className="genre">
+                    {/* <h2>My List </h2> */}
+                    {/* <div className="genre-list"> */}
+                        < MyListIndex /> 
+                    {/* </div> */}
+                </div>
+                <div className="genre">
                     <h2>Action</h2>
                     <div className="genre-list">
                         {actions_movies}
@@ -57,39 +64,7 @@ export default class Genre extends React.Component{
                         <GenreListItem /> 
                     </div>
                 </div>
-                <div className="genre">
-                    <h2>Genre 5</h2>
-                    <div className="genre-list">
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem />
-                    </div>
-                </div>
-                <div className="genre">
-                    <h2>Genre 6</h2>
-                    <div className="genre-list">
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem />
-                    </div>
-                </div>
-                <div className="genre">
-                    <h2>Genre 7</h2>
-                    <div className="genre-list">
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem /> 
-                            <GenreListItem />
-                    </div>
-                </div>
+                
                 {/* <div className="genre">
                     <h2>Genre 2</h2>
                     <ul>

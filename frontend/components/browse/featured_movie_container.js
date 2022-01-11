@@ -4,9 +4,9 @@ import { withRouter } from "react-router-dom";
 
 const mstp = (state) => {
     // debugger
-    const rndInt = Math.floor(Math.random() * Object.values(state.entities.videos).length - 1) + 0
+    // const rndInt = Math.floor(Math.random() * Object.values(state.entities.videos).length - 1) + 0
     return{
-        video: state.entities.videos[rndInt]
+        video: state.entities.videos[1]
     }
 }
 

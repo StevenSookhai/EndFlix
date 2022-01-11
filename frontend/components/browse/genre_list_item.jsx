@@ -7,17 +7,23 @@ export default class GenreListItem extends React.Component{
         super(props)
         this.state = {
             showModal: false,
-            hovered: false
+            hovered: false,
+            playVideo: false
         }
         this.showModal = this.showModal.bind(this)
         this.handleHover = this.handleHover.bind(this)
         this.handleHoverExit = this.handleHoverExit.bind(this)
+        this.handlePlay = this.handlePlay.bind(this)
     }
     componentDidMount(){
         // this.props.fetchAllVideos()
     }
-    
+    handlePlay(){
+        this.setState({ playVideo: true })
+
+    }
     handleHover(){
+        
         // setTimeout(() => {
             
             // }, 500);
@@ -33,9 +39,15 @@ export default class GenreListItem extends React.Component{
     }
     render(){
         if(this.props.video === undefined) return null
+
+        if (this.state.playVideo && this.props.hovered) {
+            debugger
+            return <Redirect to={`/watch/${this.props.video.id}`} />
+        }
         // debugger
         // const img = this.props.video.thumbnailURL ? this.props.video.thumbnailURL : "https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg"
         const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/sq_914x514.jpg"
+        const playButton = "https://img.icons8.com/ios-filled/50/000000/play--v1.png"
         if (!this.state.showModal && !this.state.hovered){
             return(
                 <div onClick={this.showModal}
@@ -76,8 +88,10 @@ export default class GenreListItem extends React.Component{
                 <div className="text">
                     <div className="movie-card-buttons">
                         <div className="right-btns">
-                        <button className="play-card-btn">P</button>
-                        <button className="add-to-list-btn">+</button>    
+                        {/* <button className="play-card-btn">P</button> */}
+                        <img  onClick={this.handlePlay} className="play-card-btn" src={playButton} alt="" />
+                                <img className="play-card-btn" src="https://img.icons8.com/ios/50/000000/plus-math.png" alt="" />
+                        {/* <img className="add-to-list-btn">+</button>     */}
                         </div>
                         <div>
                             <button className="movie-show-page-btn">-</button>

@@ -32,12 +32,15 @@ export default class MovieShowPage extends React.Component{
 
     handleAddToList(){
         // return console.log("clicked")
-        const inList = this.props.lists.filter(listItem => listItem.video_id === this.props.video.id);
+        const inList = Object.values(this.props.lists).filter(listItem => listItem.video_id === this.props.video.id);
         if(inList.length === 0){
             this.setState({inlist: true})
             return this.props.createListItem(this.props.video.id, this.props.currentProfile.id)
         }else{
-            return
+            const mylist = Object.values(this.props.lists).find(listItem => listItem['video_id'] === this.props.video.id);
+            this.setState({ inlist: false})
+            debugger
+            return this.props.deleteMylist(mylist.id)
         }
         // this.setState({inlist: true})
         // window.reload()
@@ -48,7 +51,7 @@ export default class MovieShowPage extends React.Component{
         this.props.hoveredExit()
     }
     onList() {
-        const inList= this.props.lists.filter(listItem => listItem.video_id === this.props.video.id);
+        const inList= Object.values(this.props.lists).filter(listItem => listItem.video_id === this.props.video.id);
         // if (inList.length > 0) {
         //     this.setState({ inlist: true })
         //     return true

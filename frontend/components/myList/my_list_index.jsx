@@ -20,7 +20,8 @@ class ListIndex extends React.Component{
         const myVideos = []
         
         Object.values(this.props.lists).forEach( (list) => {
-            myVideos.push(this.props.videos[list.video_id])
+            myVideos.push(this.props.videos[list.video_id - 1])
+            // console.log(list)
         }) 
         return myVideos
     }
@@ -30,6 +31,7 @@ class ListIndex extends React.Component{
         // const mylistVideos = []
 
         const mylistVideos = this.getListVideos()
+        debugger
         // const mylistVideos = Object.values(this.props.lists).filter(list => this.props.videos[list.video_id])
         const myList= Object.values(mylistVideos).map(video => <GenreListItem video={video} />)
 
@@ -37,7 +39,7 @@ class ListIndex extends React.Component{
         return(
             <div className="genres-container">
                 <div className="genre">
-                    <h2>Action</h2>
+                    <h2>MyList</h2>
                     <div className="genre-list">
                         {myList}
                     </div>

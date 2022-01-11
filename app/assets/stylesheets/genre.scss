@@ -150,12 +150,11 @@
 
 .square:hover .text {
   display: block;
+  z-index: 6;
 }
 
 .genre-list{
     overflow: visible;
-    // overflow-x: scroll;
-    // overflow-y: visible
 }
 
 .genre-title{
@@ -170,25 +169,27 @@
                             border: 1px solid rgb(68, 68, 68);
                             color: rgb(0, 0, 0);
                             background: none;
-                            z-index: 3;
+                            z-index: 7;
                             cursor: pointer;
                             font-weight: 200;
                             background-color: #ffffff;
                             // background-color: #2C2C2E;
                             font-size: 15px;
-                            margin-right: 5px;
+                            margin-right: 10px;
 }
 
 .add-to-list-btn{
   height: 20px;
-  
+   text-align: center;
   
                             width: 25px;
                             border-radius: 50%;
                             border: 1px solid rgb(68, 68, 68);
                             color: rgb(255, 255, 255);
                             background: none;
-                            z-index: 3;
+                                                       z-index: 7;
+
+                            align-content: center;
                             cursor: pointer;
                             font-weight: 100;
                             // background-color: #ffffff;
@@ -199,6 +200,7 @@
 
 .movie-show-page-btn{
   height: 20px;
+  text-align: center;
                             width: 25px;
                             border-radius: 50%;
                             border: 1px solid rgb(68, 68, 68);

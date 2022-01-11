@@ -26,7 +26,7 @@ export default class VideoWatchPage extends React.Component{
             <div className="watch-container">
                 <video src={this.props.video.videoURL} autoPlay={true} progress="true" controls></video>
                 <div className="back-btn">
-                    <button onClick={this.handleBack}> Back </button>
+                    <img src="https://img.icons8.com/ios/50/000000/back--v1.png" onClick={this.handleBack} />
                 </div>
             </div>
             
