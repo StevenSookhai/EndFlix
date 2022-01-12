@@ -110,6 +110,7 @@
 .square .cover {
  object-fit: cover;
 //   background: white;
+  z-index: 6;
   
   width: 100%;
   // height:150px;
@@ -124,11 +125,14 @@
   background: #181818;
   color: #fff;
   width: 100%;
+  z-index: 6;
+
   height: 30%;
   padding: 5px;
   box-sizing: border-box;
   transition: opacity 300ms ease-out, border-radius 200ms ease-out;
   border-radius: 0 0 10px 10px;
+  // border: 4px solid red;
 }
 
 .movie-card-buttons{
@@ -208,7 +212,7 @@
                             background: none;
                             z-index: 3;
                             cursor: pointer;
-                            font-weight: 100;
+                            font-weight: bold;
                             // background-color: #ffffff;
                             background-color: #2C2C2E;
                             font-size: 15px;
@@ -216,7 +220,7 @@
 }
 
 .movie-card-genre-list{
-  margin-top: 5px;
+  // margin-top: 3px;
   display: flex;
     li{
       display: flex;
