@@ -91,11 +91,11 @@ export default class MovieShowPage extends React.Component{
 
                             {/* <img src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
 
-                            {/* <video autoPlay={true}
+                            <video autoPlay={true}
                             muted={false} src={this.props.video.videoURL}
                             alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4">
-                        </video> */}
-                            <img className="cover" src={img} />
+                        </video>
+                            {/* <img className="cover" src={img} /> */}
                             <div className="movie-title-play">
                                 <div className="movie-show-title">
                                     <h1>{this.props.video.title}</h1>
@@ -114,7 +114,7 @@ export default class MovieShowPage extends React.Component{
                                 </div>
                             </div>
                             <div className="right-btnss">
-                                <button className="mutee-btn">M</button>
+                                {/* <button className="mutee-btn">M</button> */}
                             </div>
                         </div>
                     </div>

@@ -17,16 +17,16 @@ export default class Genre extends React.Component{
         //     )
         // const actions = actions_movies.map(video => <GenreListItem movie={video} )
          const actions = Object.values(this.props.videos).filter(video => video.genre === 'Action')
-         const actions_movies = Object.values(actions).map(video => <GenreListItem video={video} />)
+        const actions_movies = Object.values(actions).map(video => <GenreListItem video={video} key={video.id} />)
 
         const anime = Object.values(this.props.videos).filter(video => video.genre === 'Anime')
-        const anime_movies = Object.values(anime).map(video => <GenreListItem video={video} />)
+        const anime_movies = Object.values(anime).map(video => <GenreListItem video={video} key={video.id}/>)
 
         const foreign = Object.values(this.props.videos).filter(video => video.genre === 'Foreign')
-        const foreign_movies = Object.values(foreign).map(video => <GenreListItem video={video} />)
+        const foreign_movies = Object.values(foreign).map(video => <GenreListItem video={video} key={video.id}/>)
 
         const horror = Object.values(this.props.videos).filter(video => video.genre === 'Horror')
-        const horror_movies = Object.values(horror).map(video => <GenreListItem video={video} />)
+        const horror_movies = Object.values(horror).map(video => <  GenreListItem video={video} key={video.id} />)
          
         // const video = (Object.values(this.props.videos)[1])
         // console.log(actions_movies)
@@ -56,38 +56,16 @@ export default class Genre extends React.Component{
                         {foreign_movies}
                     </div>
                 </div>
-                <div className="genre">
+                {/* <div className="genre">
                     <h2>Horror</h2>
                     <div className="genre-list">
                         {horror_movies}
                         <GenreListItem />
                         <GenreListItem /> 
                     </div>
-                </div>
-                
-                {/* <div className="genre">
-                    <h2>Genre 2</h2>
-                    <ul>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>                
-                        <li className="genre-item"> </li>                
-                    </ul>
-                </div>
-                <div className="genre">
-                    <h2>Genre 3</h2>
-                    <ul>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                        <li className="genre-item"> </li>
-                    
-                    </ul>
                 </div> */}
+                
+                
           </div>    
         )
     }

@@ -77,8 +77,8 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
 
         const text = this.onList() ? '✓' : '+'
         // debugger
-        // const img = this.props.video.thumbnailURL ? this.props.video.thumbnailURL : "https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg"
-        const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/nwh_914x514.jpg"
+        const img = this.props.video.thumbnailURL ? this.props.video.thumbnailURL : "https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg"
+        // const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/nwh_914x514.jpg"
         const playButton = "https://img.icons8.com/ios-filled/50/000000/play--v1.png"
         if (!this.state.showModal && !this.state.hovered){
             return(
@@ -114,9 +114,9 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
 
                 {/* <img className="cover" src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
                 {/* comment this back in */}
-                {/* <video className="cover" autoPlay={true}
-                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video> */}
-                    <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" />
+                <video className="cover" autoPlay={true}
+                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video>
+                    {/* <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" /> */}
 
                 <div className="text">
                     <div className="movie-card-buttons">
@@ -132,7 +132,7 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
                     </div>
                     <div className="movie-card-genre-list">
                         <ul className="genre-movie-card-list"> 
-                            <li>
+                            <li key={this.props.video.id}>
                                     {this.props.video.genre}
                             </li>
                         </ul>
