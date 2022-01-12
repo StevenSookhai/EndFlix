@@ -18,7 +18,7 @@ export default class MovieShowPage extends React.Component{
     componentDidMount(){
         const body = document.getElementsByTagName('body')[0]
         body.setAttribute("style", "overflow: hidden")
-        this.props.fetchlists()
+        // this.props.fetchlists()
     }
 
     componentWillUnmount(){
@@ -39,7 +39,7 @@ export default class MovieShowPage extends React.Component{
         }else{
             const mylist = Object.values(this.props.lists).find(listItem => listItem['video_id'] === this.props.video.id);
             this.setState({ inlist: false})
-            debugger
+            // debugger
             return this.props.deleteMylist(mylist.id)
         }
         // this.setState({inlist: true})
@@ -61,7 +61,8 @@ export default class MovieShowPage extends React.Component{
     }
 
         render(){
-            const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/sq_914x514.jpg"
+            const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/nwh_914x514.jpg"
+
 
             if(!this.props.video) return null
             
@@ -74,7 +75,7 @@ export default class MovieShowPage extends React.Component{
             const text = this.onList() ? '✓': '+'
 
             if (this.state.playVideo && this.props.video) {
-                debugger
+                // debugger
                 return <Redirect to={`/watch/${this.props.video.id}`} />
             }
 

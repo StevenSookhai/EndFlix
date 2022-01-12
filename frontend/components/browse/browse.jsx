@@ -29,7 +29,7 @@ export default class Browse extends React.Component{
                 <button className="manage-profile" onClick={() => this.props.logout()}>Logout</button> */}
                 <FeaturedMovieContainer /> 
                 <GenreContainer videos={this.props.videos}/>
-                <button className="manage-profile" onClick={() => this.props.logout()}>Logout</button>
+                {/* <button className="manage-profile" onClick={() => this.props.logout()}>Logout</button> */}
             </div>   
         )
     }

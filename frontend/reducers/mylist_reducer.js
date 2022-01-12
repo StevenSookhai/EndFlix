@@ -8,7 +8,7 @@ const myListReducer = (state = {}, action) => {
         case RECEIVE_LISTS:
             return action.lists
         case RECEIVE_LIST:
-             debugger
+            //  debugger
             nextState[action.list.id] = action.list
             return nextState
         case REMOVE_LIST:

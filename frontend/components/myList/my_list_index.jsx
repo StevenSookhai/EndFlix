@@ -11,8 +11,8 @@ class ListIndex extends React.Component{
         this.getListVideos = this.getListVideos.bind(this)
     }
     componentDidMount() {
-        this.props.fetchAllVideos()
-        this.props.fetchlists()
+        // this.props.fetchAllVideos()
+        // this.props.fetchlists()
         
     }
 
@@ -35,7 +35,7 @@ class ListIndex extends React.Component{
         // const mylistVideos = Object.values(this.props.lists).filter(list => this.props.videos[list.video_id])
         const myList= Object.values(mylistVideos).map(video => <GenreListItem video={video} />)
 
-        console.log(myList)
+        // console.log(myList)
         return(
             <div className="genres-container">
                 <div className="genre">

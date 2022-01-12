@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { logout } from "../../actions/session_actions";
 
-export default class BrowseHeader extends React.Component {
+class BrowseHeader extends React.Component {
     constructor(props){
         super(props)
+        this.handleManage = this.handleManage.bind(this)
     }
 
     handleManage() {
-        this.props.history.push('/manageprofiles')
+        this.props.history.push('/profiles')
     }
 
     render(){
@@ -22,9 +26,9 @@ export default class BrowseHeader extends React.Component {
 
                         <div className="header-links">
                             <a href="#">Home</a>
-                            <a href="#">TV Shows</a>
-                            <a href="#">Movies</a>
-                            <a href="#">New & Popular</a>
+                            <a href="#">GitHub</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">AngelList</a>
                             {/* <a href="#">My List</a> */}
                             <Link to="/my-list">My List</Link>
                         </div>
@@ -43,11 +47,11 @@ export default class BrowseHeader extends React.Component {
                             </img>
                             <div className="dropdown">
                                 <span
-                                    onClick={() => this.handleManage()}>
+                                    onClick={this.handleManage}>
                                     Manage Profiles
                                 </span>
                                 <span
-                                    onClick={() => this.props.logout()}>
+                                    onClick={ this.props.logout}>
                                     Log out of EndFlix
                                 </span>
                             </div>
@@ -65,3 +69,15 @@ export default class BrowseHeader extends React.Component {
     }
 }
 
+const mapStateToProps = (state) =>{
+    return{
+
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logout: () => dispatch(logout())
+    }
+}
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BrowseHeader))

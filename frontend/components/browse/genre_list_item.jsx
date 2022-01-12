@@ -25,8 +25,8 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
         this.handleAddToList = this.handleAddToList.bind(this)
     }
     componentDidMount(){
-        this.props.fetchAllVideos()
-        this.props.fetchlists()
+        // this.props.fetchAllVideos()
+        // this.props.fetchlists()
     }
     handlePlay(){
         console.log("clicked")
@@ -38,12 +38,12 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
          const inList = Object.values(this.props.lists).filter(listItem => listItem.video_id === this.props.video.id);
          if (inList.length === 0) {
              this.setState({ inlist: true })
-             debugger
+            //  debugger
              return this.props.createListItem(this.props.video.id, this.props.currentProfile.id)
          } else {
              const mylist = Object.values(this.props.lists).find(listItem => listItem['video_id'] === this.props.video.id);
              this.setState({ inlist: false })
-             debugger
+            //  debugger
              return this.props.deleteMylist(mylist.id)
          }
         }
@@ -71,14 +71,14 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
         if(this.props.video === undefined) return null
 
         if (this.state.playVideo ) {
-            debugger
+            // debugger
             return <Redirect to={`/watch/${this.props.video.id}`} />
         }
 
         const text = this.onList() ? '✓' : '+'
         // debugger
         // const img = this.props.video.thumbnailURL ? this.props.video.thumbnailURL : "https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg"
-        const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/sq_914x514.jpg"
+        const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/nwh_914x514.jpg"
         const playButton = "https://img.icons8.com/ios-filled/50/000000/play--v1.png"
         if (!this.state.showModal && !this.state.hovered){
             return(
@@ -127,7 +127,7 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
                         {/* <img className="add-to-list-btn">+</button>     */}
                         </div>
                         <div>
-                                <button onClick={this.showModal} className="movie-show-page-btn">-</button>
+                                <button onClick={this.showModal} className="add-to-list-btn">-</button>
                         </div>
                     </div>
                     <div className="movie-card-genre-list">
