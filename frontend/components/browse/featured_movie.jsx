@@ -49,9 +49,9 @@ export default class FeaturedMovie extends React.Component{
                 <div>
                 <div className="featured-movie-container">
                     {/* <div> */}
-                            <video autoPlay={true}
-                            muted={true} src={this.props.video.videoURL}></video>
-                        {/* <img className="cover" src={img}  /> */}
+                            {/* <video autoPlay={true}
+                            muted={true} src={this.props.video.videoURL}></video> */}
+                        <img className="cover" src={img}  />
     
                     {/* </div> */}
                     <div className="featured-movie-content">
