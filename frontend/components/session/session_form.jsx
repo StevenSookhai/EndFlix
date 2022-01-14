@@ -14,6 +14,9 @@ class SessionForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this)
         this.handleHomepage = this.handleHomepage.bind(this)
     }
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
 
     handleInput(type) {
         return (e) => {
@@ -30,7 +33,7 @@ class SessionForm extends React.Component {
     handleDemo(e){
         e.preventDefault();
         this.setState({email: "Email", password: "Password"})
-        this.props.processForm(this.state)
+        this.props.processForm({ email: "Email", password: "Password" })
     }
 
     handleHomepage(){

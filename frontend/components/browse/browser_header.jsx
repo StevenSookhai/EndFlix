@@ -16,6 +16,7 @@ class BrowseHeader extends React.Component {
         this.handleManage = this.handleManage.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
         this.update = this.update.bind(this)
+        this,this.handleExitSearch = this.handleExitSearch.bind(this)
     }
 
     handleSearch(e){
@@ -36,7 +37,7 @@ class BrowseHeader extends React.Component {
     }
     componentDidMount(){
         const header = document.getElementsByClassName("header-main-container")
-        
+
     }
 
     render(){
@@ -55,6 +56,7 @@ class BrowseHeader extends React.Component {
             className="settings-container">
             {/* <button onClick={this.props.logout}> */}
             {/* <label ></label> */}
+            <div>
             <input className="search-input" type="text"
                 placeholder="Search"
                 onChange={this.update}
@@ -64,9 +66,10 @@ class BrowseHeader extends React.Component {
 
             {/* <img onClick={this.handleSearch} width='35px' src={searchIcon}>
             </img> */}
-            <button onClick={this.handleSearch}>Search</button>
-            <img width='35px' src={bellIcon}>
-            </img>
+            <button onClick={this.handleExitSearch}>X</button>
+            </div>
+            {/* <img width="30px" height="30px" src={window.searchIcon}>
+            </img> */}
             <div className="dropdown-container">
 
                 <img width='35px' color="white" src="https://occ-0-444-448.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFHJqNUeGyz6qFesBt8U7Z_N7JqBoPCztz6BZH8Aq3TRyG6-G7e2mW1rCWsvUywSWN5mCnItuJ2xCg9cROXU4MHZhug.png?r=a41">
@@ -91,19 +94,20 @@ class BrowseHeader extends React.Component {
         : <div className="settings-container">
             {/* <button onClick={this.props.logout}> */}
             {/* <label ></label> */}
-            <input className="search-input" type="text"
+            {/* <input className="search-input" type="text"
                 placeholder="Search"
                 onChange={this.update}
                 value={this.state.searchInput}
                 // autoFocus
-            />
-                <button onClick={this.handleSearch}>Search</button>
+            /> */}
+                {/* <button onClick={this.handleSearch}>Search</button> */}
 
             {/* <img width='35px' src={searchIcon}>
             </img> */}
 
-            <img width='35px' src={bellIcon}>
-            </img>
+            {/* <img width='35px' src={bellIcon}>
+            </img> */}
+                <img onClick={this.handleSearch} width="30px" height="30px"src={window.searchIcon}></img>
             <div className="dropdown-container">
 
                 <img width='35px' color="white" src="https://occ-0-444-448.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFHJqNUeGyz6qFesBt8U7Z_N7JqBoPCztz6BZH8Aq3TRyG6-G7e2mW1rCWsvUywSWN5mCnItuJ2xCg9cROXU4MHZhug.png?r=a41">
