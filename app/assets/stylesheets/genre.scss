@@ -127,8 +127,8 @@
   color: #fff;
   width: 100%;
   z-index: 6;
-
-  height: 30%;
+  // border: 5px solid red;
+  height: 50%;
   padding: 5px;
   box-sizing: border-box;
   transition: opacity 300ms ease-out, border-radius 200ms ease-out;
@@ -150,7 +150,7 @@
 //   width: 350vw;
 
 //   height: 420px;
-  box-shadow: 0 0 2px #000a;
+  // box-shadow: 0 0 2px #000a;
 }
 
 .square:hover .cover{
@@ -172,53 +172,62 @@
 }
 
 .play-card-btn{
-  height: 18px;
+  display: flex;
+  justify-content: center;
+  height: 22px;
   align-content: center;
-                            width: 23px;
+                            width: 27px;
                             border-radius: 50%;
-                            border: 1px solid rgb(68, 68, 68);
-                            color: rgb(0, 0, 0);
+                             border: 1px solid rgb(68, 68, 68);
+
+                            // color: rgb(0, 0, 0);
                             background: none;
                             z-index: 7;
                             cursor: pointer;
                             font-weight: 200;
                             background-color: #ffffff;
                             // background-color: #2C2C2E;
-                            font-size: 3px;
+                            // font-size: 3px;
                             margin-right: 10px;
 }
 
 .add-to-list-btn{
-  height: 20px;
-   text-align: center;
-  
-                            width: 25px;
+  display: flex;
+  justify-content: center;
+  height: 22px;
+  align-content: center;
+                            width: 27px;
                             border-radius: 50%;
-                            border: 1px solid rgb(68, 68, 68);
-                            color: rgb(255, 255, 255);
+                             border: 1px solid rgb(68, 68, 68);
+                            color: white;
+                            // color: rgb(0, 0, 0);
                             background: none;
-                                                       z-index: 7;
-
-                            align-content: center;
+                            z-index: 7;
                             cursor: pointer;
-                            font-weight: 100;
-                            // background-color: #ffffff;
-                            background-color: #2C2C2E;
-                            font-size: 13px;
-                            margin-right: 5px;
-                            margin-bottom: 10px;
-
+                            font-weight: 200;
+                            background-color: 141414;
+                            // background-color: #2C2C2E;
+                            // font-size: 3px;
+                            margin-right: 10px;
                             &:hover{
                             border-color: rgb(255, 255, 255);
                             cursor: pointer;
 
                             }
+                            //   span{
+                            //   // top: 2px;
+                            //   margin-bottom: 40px;
+                            //   position: absolute;
+                            //   background-color: black;
+                            //   color: white;
+                            //   font-size: 10px;
+                            // }
 }
 
 .movie-show-page-btn{
-  height: 20px;
+  height: 22px;
   text-align: center;
-                            width: 25px;
+                            width: 27px;
                             border-radius: 50%;
                             border: 1px solid rgb(68, 68, 68);
                             color: rgb(255, 255, 255);
@@ -235,20 +244,33 @@
                             &:hover{
                             border-color: rgb(255, 255, 255);
                             cursor: pointer;
-
+                              position: relative;
                             }
+
+                          
 }
 
 .movie-card-genre-list{
-  // margin-top: 3px;
+  margin-top: 5px;
   display: flex;
     li{
       display: flex;
       font-size: 10px;
       margin-left: 5px;
+      font-family: Helvetica;
+      font-weight: lighter;
     }
 }
 
 .right-btns{
   display: flex;
+  margin-bottom: 3px;
+}
+
+.movie-title{
+  span{
+    font-family: Helvetica;
+    font-weight: lighter;
+  }
+  margin-bottom: 5px;
 }

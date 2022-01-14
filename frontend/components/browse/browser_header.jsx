@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { logout } from "../../actions/session_actions";
 import { Redirect } from "react-router-dom";
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 class BrowseHeader extends React.Component {
     constructor(props){
@@ -67,7 +68,11 @@ class BrowseHeader extends React.Component {
             {/* <img onClick={this.handleSearch} width='35px' src={searchIcon}>
             </img> */}
             <button onClick={this.handleExitSearch}>X</button>
+            
+                {/* < NotificationsIcon style={{ fontSize: '32px', color: 'white' }} />  */}
+ 
             </div>
+            
             {/* <img width="30px" height="30px" src={window.searchIcon}>
             </img> */}
             <div className="dropdown-container">
@@ -107,7 +112,10 @@ class BrowseHeader extends React.Component {
 
             {/* <img width='35px' src={bellIcon}>
             </img> */}
+               
                 <img onClick={this.handleSearch} width="30px" height="30px"src={window.searchIcon}></img>
+                < NotificationsIcon style={{ fontSize: '32px' , color: 'white'}}/> 
+
             <div className="dropdown-container">
 
                 <img width='35px' color="white" src="https://occ-0-444-448.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFHJqNUeGyz6qFesBt8U7Z_N7JqBoPCztz6BZH8Aq3TRyG6-G7e2mW1rCWsvUywSWN5mCnItuJ2xCg9cROXU4MHZhug.png?r=a41">

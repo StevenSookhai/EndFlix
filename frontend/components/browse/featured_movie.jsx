@@ -2,6 +2,10 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import VideoWatchPageContainer from "../videos/video_watch_page_container";
 import MovieShowPageContainer from "./movie_show_page_container";
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 // import VideoWatchPage from "../videos/video_watch_page";
 // VideoWatchPageContainer
 
@@ -11,10 +15,12 @@ export default class FeaturedMovie extends React.Component{
         super(props)
         this.state = {
             playVideo: false,
-            showPage: false
+            showPage: false,
+            muted: true
         }
         this.handlePlay = this.handlePlay.bind(this)
         this.handleshow = this.handlePlay.bind(this)
+        this.handleMuted = this.handleMuted.bind(this)
     }
 
     componentDidMount(){
@@ -31,8 +37,16 @@ export default class FeaturedMovie extends React.Component{
         this.setState({ showPage: true })
 
     }
+    
+    handleMuted(){
+        // document.getElementById("feature-movie").muted = this.state.muted
+        this.setState({muted: !this.state.muted})
+    }
 
     render(){
+
+        const muted = this.state.muted
+        const mutedButton = this.state.muted ? < VolumeOffIcon style={{ fontSize: '32px' }} /> : < VolumeUpIcon style={{ fontSize: '32px' }}/> 
         
         // debugger
         const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/sq_914x514.jpg"
@@ -40,7 +54,7 @@ export default class FeaturedMovie extends React.Component{
         if(this.props.video === undefined) return null
 
         if (this.state.playVideo) {
-            debugger
+            // debugger
             return <Redirect to={`/watch/${this.props.video.id}`} />
         }
 
@@ -55,8 +69,8 @@ export default class FeaturedMovie extends React.Component{
                 <div>
                 <div className="featured-movie-container">
                     {/* <div> */}
-                            {/* <video autoPlay={true}
-                            muted={true} src={this.props.video.videoURL}></video> */}
+                            <video className="feature-movie" autoPlay={true}
+                            muted={muted} src={this.props.video.videoURL}></video>
                         {/* <img className="cover" src={img}  /> */}
     
                     {/* </div> */}
@@ -72,12 +86,20 @@ export default class FeaturedMovie extends React.Component{
     
                         <div className="featured-button">
                             <div className="features-play-info">
-                                <button onClick={ this.handlePlay} className="play-btn">Play </button>
-                                <button  onClick={this.handleshow} className="info-btn">More Info</button>
+                                <button onClick={ this.handlePlay} className="play-btn">
+                                        <  PlayArrowIcon style={{ fontSize: '32px' }}/>
+                                    <span>Play</span>
+                                </button>
+                                <button  onClick={this.handleshow} className="info-btn">
+                                        <InfoOutlinedIcon style={{ fontSize: '32px' }}/>
+                                    <span>More Info</span>
+                                </button>
                             </div>
     
                             <div className="featured-replay">
-                                {/* <button>M</button> */}
+                                <button onClick={this.handleMuted}>
+                                    {mutedButton }
+                                </button>
                             </div>
                         </div>
                     </div>

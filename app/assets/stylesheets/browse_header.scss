@@ -48,15 +48,43 @@
 .settings-container{
     // border: 4px solid rgb(17, 0, 255);
     display: flex;
+    justify-content:space-evenly;
     margin-right: 90px;
     margin-top: 12px;
+
+    img{
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    input{
+        padding: 10px;
+        width: 200px;
+        margin-top: 0;
+
+        &:focus{
+            outline-style: none;
+        }
+    }
+    button{
+        padding: 10px;
+        border: none;
+        font-size: 20px;
+        background: none;
+        color: white;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
 
 .dropdown-container{
     // border: 5px solid red;
+    // margin-top: 8px;
     position: relative;
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 20px;
     height: 40px;
 }
 

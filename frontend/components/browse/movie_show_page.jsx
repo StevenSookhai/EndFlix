@@ -1,18 +1,23 @@
 import React from "react";
 import VideoWatchPageContainer from "../videos/video_watch_page_container";
 import { Redirect } from "react-router-dom";
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 
 export default class MovieShowPage extends React.Component{
     constructor(props){
         super(props)
         this.state = {
             playVideo: false,
-            inlist: false
+            inlist: false,
+            muted: true
         }
         this.handleModal = this.handleModal.bind(this)
         this.handlePlay = this.handlePlay.bind(this)
         this.handleAddToList = this.handleAddToList.bind(this)
         this.onList = this.onList.bind(this)
+        this.handleMuted = this.handleMuted.bind(this)
 
     }
     componentDidMount(){
@@ -50,6 +55,11 @@ export default class MovieShowPage extends React.Component{
         this.props.showModal()
         this.props.hoveredExit()
     }
+
+    handleMuted() {
+        // document.getElementById("feature-movie").muted = this.state.muted
+        this.setState({ muted: !this.state.muted })
+    }
     onList() {
         const inList= Object.values(this.props.lists).filter(listItem => listItem.video_id === this.props.video.id);
         // if (inList.length > 0) {
@@ -66,7 +76,8 @@ export default class MovieShowPage extends React.Component{
 
             if(!this.props.video) return null
             
-            let added;
+            const muted = this.state.muted
+            const mutedButton = this.state.muted ? < VolumeOffIcon style={{ fontSize: '32px' }} /> : < VolumeUpIcon style={{ fontSize: '32px' }} /> 
 
             // debugger
             // const added = this.props.lists.some( list => list.video_id = this.props.video.id && list.profile_id === this.props.currentProfile.id)
@@ -89,12 +100,14 @@ export default class MovieShowPage extends React.Component{
                                 <button onClick={this.handleModal} className="Modal-button">X</button>
                             </div>
 
-                            <img src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" />
+                            {/* <img src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
 
-                            {/* <video autoPlay={true}
-                            muted={true} src={this.props.video.videoURL} */}
-                            {/* alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4">
-                        </video> */}
+                            <video autoPlay={true}
+                            muted={muted} src={this.props.video.videoURL} 
+                             alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4">
+                        </video>
+
+
                             {/* <img className="cover" src={img} /> */}
                             <div className="movie-title-play">
                                 <div className="movie-show-title">
@@ -103,7 +116,10 @@ export default class MovieShowPage extends React.Component{
 
                                 <div className="movie-show-buttons">
                                     <div className="left-btns">
-                                        <button onClick={this.handlePlay} className="play-movie-button">Play</button>
+                                        <button onClick={this.handlePlay} className="play-movie-button">
+                                            < PlayArrowIcon style={{ fontSize: '32px' }}/> 
+                                            <span>Play</span>
+                                            </button>
                                         <button onClick={this.handleAddToList} className="add-to-list-button">{text}</button>
                                     </div>
 
@@ -114,7 +130,9 @@ export default class MovieShowPage extends React.Component{
                                 </div>
                             </div>
                             <div className="right-btnss">
-                                {/* <button className="mutee-btn">M</button> */}
+                                <button onClick={this.handleMuted} className="mutee-btn">
+                                    {mutedButton}
+                                    </button>
                             </div>
                         </div>
                     </div>

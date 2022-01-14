@@ -20,7 +20,7 @@ export default class Browse extends React.Component{
     }
     render(){
          if (this.props.currentProfile === undefined) return null
-        debugger
+        // debugger
         return(
             <div>
                 < BrowseHeader />

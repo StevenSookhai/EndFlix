@@ -140,20 +140,37 @@
                  
                     display: flex;
                             justify-content: space-between;
-                    // margin-top: 20px;
+                    margin-top: 13px;
+                    .left-btns{
+                        display: flex;
+                    }
                         .play-movie-button{
+                            justify-content: center;
+                            align-items: center;
+                            display: flex;
                             margin-top: 8px;
                             color: rgb(0, 0, 0);
                             padding: 10px;
                             width: 150px;
-                            border-radius: 5px;
+                            border-radius: 10px;
                             font-size: 20px;
                             margin-right: 10px;
                             font-weight: bold;
                             cursor: pointer;
+                            border: none;
+                            letter-spacing: 1px;
+
                             // margin-bottom: 5px;
                             
                 // border: 3px solid red;
+                span{
+            margin-left: 5px;
+            font-family: Helvetica;
+        }
+        &:hover{
+                    background: rgb(212, 212, 212);
+
+        }
 
 
                         }
@@ -161,8 +178,8 @@
                         .add-to-list-button{
                             margin-top: 15px;
                             // color: red;
-                            height: 40px;
-                            width: 40px;
+                            height: 43px;
+                            width: 43px;
                             border-radius: 50%;
                             border: 1px solid rgb(68, 68, 68);
                             color: rgb(255, 255, 255);
@@ -231,7 +248,7 @@
                             border: 1px solid rgb(68, 68, 68);
                             color: gray;
                             background: none;
-                            z-index: 3;
+                            z-index: 7;
                             cursor: pointer;
                             font-weight: 200;
                             background-color: #2C2C2E;

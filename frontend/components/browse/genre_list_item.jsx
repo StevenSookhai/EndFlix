@@ -5,6 +5,8 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchAllVideos } from "../../actions/video_actions";
 import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_actions'
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 
@@ -29,7 +31,7 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
         // this.props.fetchlists()
     }
     handlePlay(){
-        console.log("clicked")
+        // console.log("clicked")
         this.setState({ playVideo: true })
 
     }
@@ -119,15 +121,27 @@ import { createListItem, fetchlists, deleteMylist } from '../../actions/mylist_a
                     <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" />
 
                 <div className="text">
+                    <div className="movie-title">
+                        <span>{this.props.video.title}</span>
+                    </div>
                     <div className="movie-card-buttons">
                         <div className="right-btns">
-                        <img  onClick={this.handlePlay} className="play-card-btn" src={playButton} alt="" />
+                                {/* PlayArrowIcon */}
+                        {/* <img  onClick={this.handlePlay} className="play-card-btn" src={playButton} alt="" /> */}
+                                <button onClick={this.handlePlay} className="play-card-btn">
+                                    {/* {text} */}
+                                    < PlayArrowIcon style={{ fontSize: '20px' }}/>
+                                </button>
+
                                 {/* <img className="play-card-btn" src="https://img.icons8.com/ios/50/000000/plus-math.png" alt="" /> */}
                                 <button onClick={this.handleAddToList} className="movie-show-page-btn">{text}</button>
                         {/* <img className="add-to-list-btn">+</button>     */}
                         </div>
                         <div>
-                                <button onClick={this.showModal} className="add-to-list-btn">-</button>
+                                <button onClick={this.showModal} className="add-to-list-btn">
+                                    < KeyboardArrowDownIcon style={{ fontSize: '22px' }}/>
+                                    {/* <span>Movie's Info</span> */}
+                                </button>
                         </div>
                     </div>
                     <div className="movie-card-genre-list">

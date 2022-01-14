@@ -18,7 +18,7 @@ export const fetchlists = () => {
     })
 }
 export const deleteMylist= (mylistId) => {
-    debugger
+    // debugger
     return $.ajax({
         method: 'DELETE',
         url: `/api/mylists/${mylistId}`

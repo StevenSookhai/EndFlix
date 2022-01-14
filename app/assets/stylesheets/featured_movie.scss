@@ -71,34 +71,58 @@
         // font-size: 1vw;
         font-weight: bold;
         // z-index: 5;
+        display: flex;
         width: 120px;
         margin-left: 38px;
         margin-right: 10px;
-        font-size: 20px;
+        font-size: 18px;
         // width: 120px;
         border-radius: 10px;
         letter-spacing: 1px;
-        padding: 20px;
+        padding: 10px 20px;
+
         cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border: none;
+
+        span{
+            margin-left: 5px;
+            font-family: Helvetica;
+        }
+        &:hover{
+                    background: rgb(212, 212, 212);
+
+        }
        
     }
 
     .info-btn{
         margin-right: 10px;
         font-size: 30px;
-        width: 165px;
-        background-color: #83847F;
+        width: 180px;
+        background: rgba(131, 132, 127, 0.3);
         // opacity: .7;
         color: white;
-        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
         border-radius: 10px;
         font-weight: bold;
         cursor: pointer;
-        padding: 20px;
+        border: none;
 
+        padding: 10px 20px;
+        span{
+            margin-left: 5px;
+
+            font-family: Helvetica;
+        }
 
         &:hover{
-            background-color: opacity(.4);
+                    background: rgba(131, 132, 127, 0.1);
+
         }
 
         
@@ -108,7 +132,7 @@
 }   
 .featured-replay{
         font-size: 30px;
-
+z-index: 7;
 // border: 5px solid red;
 // width: 500px;
 display: flex;
@@ -140,24 +164,29 @@ height: 50px;
 
 .featured-tile-des{
 // border: 5px solid gold;
-
+margin-left: 5vw;
 display: flex;
 width: 30%;
 // height: 200px;
-justify-content: flex-start;
+justify-content: center;
 // align-content: center;
 align-items: center;
 flex-direction: column;
 margin-bottom: 20px;
 
 
+
 .feature-title
 {   
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
     // margin-left: 50px;
     // border: 5px sold red;
+    font-weight: lighter;
+
     font-size: 60px;
+                font-family: helvetica;
+
 
 }
 }
@@ -165,11 +194,16 @@ margin-bottom: 20px;
 
 .feature-description{
     margin-top: 20px;
-    margin-left: 100px;
+    // margin-left: 100px;
     // font-size: 20px;
                 color: white;
                 font-size: 20px;
                 font-weight: lighter;
                 letter-spacing: 1px;
                 line-height: 25px;
+                font-family: helvetica;
+}
+
+.play-arrow{
+    // size: 30px;
 }

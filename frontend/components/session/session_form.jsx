@@ -87,10 +87,13 @@ class SessionForm extends React.Component {
                     {/* <label className="facebook-login">Login with Facebook</label> */}
                     {/* <label className="google-cap">This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</label> */}
                 </form>
-                    <label className="sign-up-link">{text}   </label>
-                    <Link className="sign-up" to={`${link}`}>{altText}.</Link>
+                    <div className="sign-up-login-links">
+                                <label className="sign-up-link">{text}   </label>
+                                <Link className="sign-up" to={`${link}`}>{altText}.</Link>
 
+                    </div>
             </div>
+                    
           </div>
         );
     }

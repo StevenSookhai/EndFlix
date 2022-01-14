@@ -31,7 +31,7 @@ class ListIndex extends React.Component{
         // const mylistVideos = []
 
         const mylistVideos = this.getListVideos()
-        debugger
+        // debugger
         // const mylistVideos = Object.values(this.props.lists).filter(list => this.props.videos[list.video_id])
         const myList = Object.values(mylistVideos).map(video => <GenreListItem video={video}  />)
 
