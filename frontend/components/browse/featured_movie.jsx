@@ -24,26 +24,32 @@ export default class FeaturedMovie extends React.Component{
         
     }
     handlePlay(){        
-
-        this.setState({playVideo: !this.state.playVideo})
+        this.setState({playVideo: true})
     }
 
     handleshow(){
-        this.setState({ showPage: !this.state.showPage })
+        this.setState({ showPage: true })
 
     }
 
     render(){
         
-        debugger
+        // debugger
         const img = "http://www.simpleimageresizer.com/_uploads/photos/5b203fd6/sq_914x514.jpg"
         // debugger
         if(this.props.video === undefined) return null
 
-        if (this.state.playVideo && this.props.video) {
+        if (this.state.playVideo) {
             debugger
             return <Redirect to={`/watch/${this.props.video.id}`} />
         }
+
+        if (this.state.showPage && !this.state.playVideo) {
+            return (
+                < MovieShowPageContainer video={this.props.video} />
+            )
+        }
+
         if(!this.state.playVideo){
             return(
                 <div>
@@ -78,15 +84,11 @@ export default class FeaturedMovie extends React.Component{
                 </div>
                 </div>
             )
-        }else if(this.state.playVideo && !this.props.showPage){
-            return(
-                <VideoWatchPageContainer video={this.props.video} handlePlay={this.handlePlay}/> 
-            )
-        }else if(this.state.playVideo && this.state.showPage){
-            debugger
-            return(
-                < MovieShowPageContainer  video={this.props.video}/>
-            )
+        // }else if(this.state.playVideo && !this.props.showPage){
+        //     return(
+        //         <VideoWatchPageContainer video={this.props.video} handlePlay={this.handlePlay}/> 
+        //     )
+        
         }
     }
 }

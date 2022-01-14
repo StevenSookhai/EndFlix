@@ -7,12 +7,16 @@ class Splash extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            email: ''
+            email: '',
+            goToSignUp: false
         }
-   
+    this.handleSignUp = this.handleSignUp.bind(this)
     }
     updateEmail(type) {
         return e => this.setState({ [type]: e.target.value })
+    }
+    handleSignUp(){
+        this.props.history.push({ pathname: `/signup`, email: this.state.email })
     }
     render(){
         const bgImg = "https://assets.nflxext.com/ffe/siteui/vlv3/5c235903-02cc-4228-85a2-5fcef1e47627/ca14817e-a9cb-460a-8865-f53dc27950e4/US-en-20211227-popsignuptwoweeks-perspective_alpha_website_medium.jpg" 
@@ -30,8 +34,9 @@ class Splash extends React.Component{
                             <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
                             {/* <label className="sign-up-label"> Hello </label> */}
                             <div className="sign-up-container">
-                            <input type="text" className="sign-up-input" value={"Email Address"} onChange={this.updateEmail('email')}/>
-                            <Link className='greeting-btn' to='/signup'>Get Started </Link>
+                                <input type="text" className="sign-up-input" placeholder="Email Address" onChange={this.updateEmail('email')}/>
+                                <button className='greeting-btn' onClick={this.handleSignUp}>Get Started </button>
+                            
                             </div>
                             {/* <Link className="login-btn" to="/login">Log In</Link> */}
                         </div>
@@ -77,21 +82,21 @@ class Splash extends React.Component{
                             <h2 className="smart-tv">Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</h2>
                         </div>
                     </div>
-                    {/* <footer> */}
-                    <div className='splash-footer'>
-                        <p>Social links</p>
+                    <footer>
+                        <div className='splash-footer'>
+                            <p>Social links</p>
 
-                        <ul>
-                            <li>
-                                <a href="">GitHub</a>
-                            </li>
+                            <ul>
+                                <li>
+                                    <a href="">GitHub</a>
+                                </li>
 
-                            <li>
-                                <a href="">My LinkedIn</a>
-                            </li>
-                        </ul>
-                    </div>
-                {/* </footer> */}
+                                <li>
+                                    <a href="">My LinkedIn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </footer>
                 </div>
             </div>
         )

@@ -44,17 +44,23 @@ body {
   // width: 60%;
   // color: white;
   
+  button{
+
+  }
 
   .unlimited-movie{
     padding-left: 100px;
     padding-top: 130px;
     display: flex;
-    font-family: sans-serif;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #fff;
     margin: auto;
     justify-content: center;
     // text-align: center;
     word-wrap: break-word;
     white-space: normal;
+    // line-break: ;
     // flex-wrap: wrap-reverse;
     // border: 5px solid blue;
     font-size: 50px;
@@ -66,6 +72,8 @@ body {
     font-size: 26px;
     // padding-bottom: 40px;
     font-family: Helvetica;
+    font-weight: bold;
+    color: #fff;
     margin: auto;
     color: rgba(255, 255, 255, 0.8); 
   
@@ -77,6 +85,7 @@ body {
     // position: relative;
     // padding: 30px;
     // overflow-wrap: none;
+    display: flex;
   }
   .sign-up-input{
     // position: static;
@@ -86,26 +95,34 @@ body {
     // align-items: center;
     font-size: 16px;
     padding: 25px;
-    width: 500px;
+    width: 450px;
     // margin: auto;
     // margin-left: 20px;
+    &:focus{
+      outline: none;
+    }
   }
   .greeting-btn {
     // position: absolute;
     // display: block;
     text-align: center;
-    width: 60px;
+    width: 200px;
     color: white;
-    padding: 27px;
-    padding-right: 100px;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    // padding-right: 100px;
     // padding-bottom: 28x;
     // padding-top: 28px;
     // margin: 5px;
     background-color: red;
     border-radius: 4px;
     text-decoration: none;
-    font-family: sans-serif;
-    font-weight: 600;
+    font-family: Helvetica;
+    // font-weight: bold;
+    color: #fff;
+    font-weight: lighter;
+    border: none;
     
     // margin-left: 20px;
     
@@ -135,7 +152,10 @@ h3 {
     margin: auto;
     padding-top: 25px;
     padding-bottom: 25px;
-    font-family: sans-serif;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #fff;
+    // font-family: helvetica;
   }
 }
 
@@ -151,7 +171,9 @@ h3 {
   margin-top: 170px;
   // padding: 100px;
   color: white;
-  border: 4px solid darkgray;
+  border-bottom: 9px solid #222;
+    border-top: 9px solid #222;
+
 
     .splash-second-contents{
       font-size: 25px;
@@ -177,7 +199,9 @@ h3 {
       }
 
       .save-favorites{
-        font-family: sans-serif;
+            font-family: Helvetica;
+        font-weight: bold;
+    color: #fff;
         font-size: 23px;
          color: rgba(255, 255, 255, 0.9);
         display: flex;
@@ -201,7 +225,8 @@ h3 {
   // margin-top: 200px;
   // padding: 100px;
   color: white;
-  border: 4px solid darkgray;
+    border-bottom: 9px solid #222;
+
   // height: 700px;
 
     .splash-third-contents{
@@ -249,7 +274,10 @@ h3 {
 
     .smart-tv{
       // margin-top: 0px;
-      font-family: sans-serif;
+          font-family: Helvetica;
+          // font-weight: bold;
+    color: #fff;
+
       font-size: 23px;
       // margin-bottom: 5;
       // width: 400px;
@@ -270,7 +298,8 @@ h3 {
   // margin-top: 200px;
   // padding: 100px;
   color: white;
-  border: 4px solid darkgray;
+   border-bottom: 9px solid #222;
+
 
     .splash-fourth-contents{
       font-size: 25px;
@@ -295,8 +324,10 @@ h3 {
       }
 
       .save-favorites{
-        font-family: sans-serif;
-        font-size: 23px;
+            font-family: Helvetica;
+          font-weight: bold;
+    color: #fff;
+        font-size: 23px;  
          color: rgba(255, 255, 255, 0.9);
         display: flex;
       }
@@ -318,8 +349,10 @@ h3 {
   // align-content: flex-start;
   // margin-top: 200px;
   // padding: 100px;
-  color: white;
-  border: 4px solid darkgray;
+  // color: white;
+  // box-shadow: gold;
+  border-bottom: 9px solid #222;
+  // border: 4px solid darkgray;
   // height: 700px;
 
     .splash-fifth-contents{
@@ -360,11 +393,14 @@ h3 {
 
     .smart-tv{
       // margin-top: 0px;
-      font-family: sans-serif;
+         font-family: Helvetica;
+        //  font-weight: bold;
+    color: #fff;
+
       font-size: 23px;
       // margin-bottom: 5;
       // width: 400px;
-       color: rgba(255, 255, 255, 0.9); 
+      //  color: rgba(255, 255, 255, 0.9); 
       // border: 5px solid white;
       display: flex;
       // justify-content: center;
@@ -407,8 +443,11 @@ h3 {
     background-color: #DB202C;
     border-radius: 4px;
     text-decoration: none;
-    font-family: sans-serif;
-    font-weight: 600;
+        font-family: Helvetica;
+        font-weight: lighter;
+    // color: #fff;
+
+    // font-weight: 600;
     &:hover{
       background-color: #f7252f;
     }
@@ -430,15 +469,42 @@ h3 {
   background-color: rgba(0,0,0,.75); 
   }
 
-  .splash-footer{
-    display: block;
-    width: 100%;
-    // border: 4px solid red;
-    background-color: rgb(58, 58, 58)
-  }
+  
 
   footer{
-    background-color: gray;
+    // background-color: rgb(168, 4, 4);
+    border-top: 9px solid #222;
+
+      margin: 0 100px;
+      padding: 50px 45px 20px;
+
+        .splash-footer{
+           padding: 0 0 20px;
+        // display: block;
+        // width: 100%;
+        // border: 4px solid red;
+        // background-color: rgb(58, 58, 58)
+        p {
+              margin: 0 0 30px;
+              font-size: 30px;
+              color: #757575;
+            }
+
+            ul {
+              max-width: 500px;
+              font-size: 15px;
+              display: flex;
+              justify-content: flex-start;
+ 
+              li {
+                margin-right: 50px;
+              }
+              li > a {
+                text-decoration: none;
+                color: #757575;
+              }
+            }
+    }
   }
 
   .download-shows{
@@ -448,8 +514,10 @@ h3 {
       }
 
       .save-favorites{
-        font-family: sans-serif;
+            font-family: Helvetica;
+        font-weight: bold;
+    color: #fff;
         font-size: 23px;
-         color: rgba(255, 255, 255, 0.9);
+        //  color: rgba(255, 255, 255, 0.9);
         display: flex;
       }

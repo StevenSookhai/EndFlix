@@ -56,6 +56,21 @@ export default class Genre extends React.Component{
                         {foreign_movies}
                     </div>
                 </div>
+                <footer>
+                    <div className='splash-footer'>
+                        <p>Social links</p>
+
+                        <ul>
+                            <li>
+                                <a href="">GitHub</a>
+                            </li>
+
+                            <li>
+                                <a href="">My LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
                 {/* <div className="genre">
                     <h2>Horror</h2>
                     <div className="genre-list">

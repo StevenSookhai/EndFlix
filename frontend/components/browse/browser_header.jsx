@@ -34,6 +34,10 @@ class BrowseHeader extends React.Component {
     update(e) {
         this.setState({ searchInput: e.currentTarget.value });
     }
+    componentDidMount(){
+        const header = document.getElementsByClassName("header-main-container")
+        
+    }
 
     render(){
         // debugger

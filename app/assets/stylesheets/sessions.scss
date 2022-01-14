@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .session-container{
     // margin-bottom: 100px;
- 
+ z-index: 2;
 }
 .session-form{
     // border: 5px solid red;
@@ -23,6 +23,7 @@
     padding-top: 50px;
     padding-right: 80px;
     padding-left: 80px;
+    z-index: 3;
     // margin-bottom: 100px;
     
   h1,input, button {
@@ -30,6 +31,8 @@
     padding-top: 10px;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
+
     
   }
   .remember-me{
@@ -100,9 +103,16 @@
     flex-direction: row;
     font-size: 18px;
     align-items: center;
-    vertical-align: middle;
+    // vertical-align: middle;
     padding: 13px;
     margin-top: 30px;
+    cursor: pointer;
+    border: none;
+    z-index: 5;
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 
   h1 {
@@ -128,31 +138,45 @@
     border: none;
   }
   .session-email{
-    color: #8d8d8d
+    color: #cfcccc
   }
   .session-password{
-    color: #8d8d8d
+    color: #cfcccc
   }
   input:focus{
       top: 12px;
+      outline: none;
   }
 
   .errors{
-    background-color: orange;
-    color: white;
+    background-color: transparent;
+    color: orange;
+    text-decoration: none;
+    
+    li{
+      text-decoration: none;
+      list-style-type: none;
+    }
   }
 }
-
+.error-li{
+  text-decoration: none;
+}
 .overlay {
   // border: 5px solid green;
  display: flex;
   justify-content: center;
   position: absolute;
   flex-direction: row-reverse;
-  z-index: -2;
+  // z-index: 1;
   left: 0;
   top: 0;
   bottom: 0;
   right: 0;
   background-color: rgba(0,0,0,0.6); 
+  }
+
+  .session-button {
+    cursor: pointer;
+    
   }
