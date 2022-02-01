@@ -95,6 +95,7 @@ class ProfileForm extends React.Component{
                                 <input  className="form-input"   
                                         type="text"
                                         value={this.state.name}
+                                        placeholder="Name"
                                         onChange={this.updateInfo('name')}
                                     />
                             </div>

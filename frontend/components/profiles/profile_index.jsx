@@ -5,6 +5,7 @@ import ProfilesIndexItem from "./profile_index_item";
 import BrowseContainer from "../browse/browse_container";
 import { Redirect } from "react-router-dom";
 import ProfileFormContainer from "./profile_form_container";
+import EditIcon from '@mui/icons-material/Edit';
 
 
 export default class ProfileIndex extends React.Component{
@@ -67,8 +68,13 @@ export default class ProfileIndex extends React.Component{
              <p>{profile.name}</p>
             </li>
         })
+        const addProfilesButton = this.props.profiles.length === 5 ? null : 
 
-        // console.log(Object.values(profiles))
+        <div className="add-img" onClick={this.create}>
+            <img width="150px" height="150px" src="https://img.icons8.com/emoji/48/000000/plus-emoji.png" />
+        </div>
+
+        // console.log(this.props.profiles.length)
 
         const logo = "https://fontmeme.com/permalink/220102/80b2e83ec91311621e8aea703b915905.png"
 
@@ -93,9 +99,11 @@ export default class ProfileIndex extends React.Component{
                                 </ul>
                             </div>
                             
-                            <div className="add-img" onClick={this.create}>
+                            {/* <div className="add-img" onClick={this.create}>
                                 <img  width="150px" height="150px" src="https://img.icons8.com/emoji/48/000000/plus-emoji.png" />
-                            </div>
+                            </div> */}
+                            {addProfilesButton}
+
                         </div>
 
                     </div>
@@ -122,7 +130,15 @@ export default class ProfileIndex extends React.Component{
                                         onClick={this.click(profile)}
                                             key={profile.id}
                                            >
-                                            <img width="150px" height="150px" src={profileImg}/>
+                                            <div className="edit-profile-img">
+                                                <div className="edit-gradient">
+                                    
+                                                </div>
+                                                <div className="edit-icon">
+                                                <EditIcon  style={{ fontSize: '45px', color: 'white'}} />
+                                                </div>
+                                                <img width="150px" height="150px" src={profileImg}/>
+                                            </div>
                                             <p>{profile.name}</p>
                                         </li>
                                     )
