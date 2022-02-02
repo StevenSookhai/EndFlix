@@ -1,6 +1,8 @@
 import React from "react";
 import GenreListItem from "./genre_list_item";
 import MyListIndex from "../myList/my_list_index";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 export default class Genre extends React.Component{
     constructor(props){
         super(props)
@@ -33,15 +35,23 @@ export default class Genre extends React.Component{
         return(
             <div className="genres-container">
                 <div className="genre">
+                    {/* < ArrowBackIosIcon style={{ fontSize: '32px', color: 'white' }} />  */}
                     {/* <h2>My List </h2> */}
                     {/* <div className="genre-list"> */}
+                    {/* < ArrowBackIosIcon style={{ fontSize: '32px', color: 'white' }} />  */}
+
                         < MyListIndex /> 
+                        {/* <ArrowForwardIosIcon   /> */}
                     {/* </div> */}
                 </div>
                 <div className="genre">
                     <h2>Action</h2>
                     <div className="genre-list">
+                        < ArrowBackIosIcon style={{ fontSize: '32px', color: 'white' }} className="sliderArrow"/> 
+
                         {actions_movies}
+                        <ArrowForwardIosIcon style={{ fontSize: '32px', color: 'white' }}/>
+
                     </div>
                 </div>
                 <div className="genre">

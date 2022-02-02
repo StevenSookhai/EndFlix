@@ -19,7 +19,7 @@ export default class FeaturedMovie extends React.Component{
             muted: true
         }
         this.handlePlay = this.handlePlay.bind(this)
-        this.handleshow = this.handlePlay.bind(this)
+        this.handleshow = this.handleshow.bind(this)
         this.handleMuted = this.handleMuted.bind(this)
     }
 
@@ -29,12 +29,15 @@ export default class FeaturedMovie extends React.Component{
     componentWillUnmount(){
         
     }
-    handlePlay(){        
+    handlePlay(){       
+        console.log("hereeeee")
+
         this.setState({playVideo: true})
     }
 
     handleshow(){
-        this.setState({ showPage: true })
+        console.log("here")
+        this.setState({ showPage: !this.state.showPage })
 
     }
     
@@ -58,9 +61,9 @@ export default class FeaturedMovie extends React.Component{
             return <Redirect to={`/watch/${this.props.video.id}`} />
         }
 
-        if (this.state.showPage && !this.state.playVideo) {
+        if (this.state.showPage) {
             return (
-                < MovieShowPageContainer video={this.props.video} />
+                < MovieShowPageContainer video={this.props.video} showModal={this.handleshow} hoveredExit={() => null}/>
             )
         }
 
@@ -86,14 +89,18 @@ export default class FeaturedMovie extends React.Component{
     
                         <div className="featured-button">
                             <div className="features-play-info">
-                                <button onClick={ this.handlePlay} className="play-btn">
-                                        <  PlayArrowIcon style={{ fontSize: '32px' }}/>
-                                    <span>Play</span>
-                                </button>
-                                <button  onClick={this.handleshow} className="info-btn">
-                                        <InfoOutlinedIcon style={{ fontSize: '32px' }}/>
-                                    <span>More Info</span>
-                                </button>
+                                <div>
+                                    <button onClick={ this.handlePlay} className="play-btn">
+                                            <  PlayArrowIcon style={{ fontSize: '32px' }}/>
+                                        <span>Play</span>
+                                    </button>
+                                </div>
+                                    <div onClick={this.handleshow} >
+                                    <button   className="info-btn">
+                                            <InfoOutlinedIcon style={{ fontSize: '32px' }}/>
+                                        <span>More Info</span>
+                                    </button>
+                                </div>
                             </div>
     
                             <div className="featured-replay">

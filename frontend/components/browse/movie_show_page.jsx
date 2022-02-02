@@ -26,6 +26,18 @@ export default class MovieShowPage extends React.Component{
         // this.props.fetchlists()
     }
 
+    componentDidUpdate(){
+        // document.addEventListener("click", (e) => {
+        //     console.log(e.target)
+        // })
+    }
+
+    handleClose(){
+        document.addEventListener("click", (e) => {
+            console.log(e.target)
+        })
+    }
+
     componentWillUnmount(){
         const body = document.getElementsByTagName('body')[0]
         body.setAttribute("style", "overflow: scroll")
