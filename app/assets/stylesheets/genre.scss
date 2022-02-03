@@ -150,7 +150,7 @@ body{
 .square:hover {
   border-radius: 10px;
   transform: scale(1.4,1.6);
-          z-index: 6;
+          z-index: 1000;
 
 //   transition-delay: .1s;
 //   width: 350vw;

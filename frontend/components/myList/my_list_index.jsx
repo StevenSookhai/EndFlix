@@ -10,7 +10,8 @@ class ListIndex extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            moveItem : 0 
+            moveItem : 50,
+            itemCount: 0
         }
 
         this.getListVideos = this.getListVideos.bind(this)
@@ -27,29 +28,67 @@ class ListIndex extends React.Component{
      return (e) => {
         //  console.log(e.target.parentElement)
         const myListContainer = document.getElementById('myList')
+        // console.log(myListContainer.childElementCount)
+        //  console.log(myListContainer.lastChild.previousElementSibling)
         const currentPosition = myListContainer.getBoundingClientRect().x - 59.5
-        console.log(currentPosition)
+        //  console.log(window.innerWidth)
+         if (((window.innerWidth - myListContainer.lastChild.getBoundingClientRect().x) >= 100) && arrow === 'right' ){
+            //  console.log('not return fasle')
+             return false
+         }
 
-        if (arrow === 'right' && this.state.moveItem < 5){
-            let num = this.state.moveItem += 1 
-            this.setState({ moveItem: num })
+         if (arrow === 'right'){
+             const leftArrow = document.getElementsByClassName("sliderArrow")[0]
+            //  console.log(leftArrow.disabled)
+            // setTimeout(() => {
+            // //   document.getElementsByClassName("sliderArrow")[0].click = null 
+            // }, 1000);
+            if(leftArrow.disabled !== false){
+                leftArrow.disabled = false
+                // console.log(leftArrow.disabled)
 
-            console.log('moving left arrow')
-            const leftArrow = document.getElementsByClassName("sliderArrow")[0]
-            console.log(leftArrow)
+                //  this.setState({ moveItem: this.state.moveItem += 260 + currentPosition })
+                //  console.log(this.state.moveItem)
+            // console.log('moving left arrow')
+            this.setState({itemCount: this.state.itemCount + 1 })
+            // const leftArrow = document.getElementsByClassName("sliderArrow")[0]
+            // console.log(leftArrow)
             const myListContainer = document.getElementById('myList')
             // console.log(myListContainer)
-            myListContainer.style.transform = `translateX(${-250 + currentPosition}px)`
+            myListContainer.style.transform = `translateX(${-260 + currentPosition}px)`
+                setTimeout(() => {
+                    leftArrow.disabled = true
+                    //   document.getElementsByClassName("sliderArrow")[0].click = null
+                }, 1000);
+            }
+             
+
+
+            
+
         }
         
-        else if(arrow === 'left' && this.state.moveItem > 0){
-            let num = this.state.moveItem -= 1 
-            this.setState({moveItem: num})
+        else if(arrow === 'left' && this.state.itemCount !== 0){
             const rightArrow = document.getElementsByClassName("sliderArrow-right")[0]
-            const myListContainer = document.getElementById('myList')
-            // console.log(myListContainer)
-            myListContainer.style.transform = `translateX(${250 + currentPosition}px)`
-            // console.log(rightArrow)
+            //  console.log(this.state.itemCount)
+             if(rightArrow.disabled !== false){
+                 rightArrow.disabled = false
+
+                 this.setState({ itemCount: this.state.itemCount - 1 })
+    
+                //  let num = this.state.moveItem += 260 + currentPosition
+                 this.setState({ moveItem: this.state.moveItem += -260 + currentPosition})
+                // const myListContainer = document.getElementById('myList')
+                // console.log(myListContainer)
+                myListContainer.style.transform = `translateX(${260 + currentPosition}px)`
+                // console.log(rightArrow)
+                 rightArrow.disabled = false
+    
+                 setTimeout(() => {
+                     rightArrow.disabled = true
+                     //   document.getElementsByClassName("sliderArrow")[0].click = null
+                 }, 1000);
+             }
         }
     }
 
