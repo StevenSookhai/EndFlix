@@ -46,7 +46,7 @@ One of the core features of the Profiles MVP was to keep the current users profi
 
 ## Movie Browse and Show page
 
-<img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/8C1NWaigVy1WjlVGGT/giphy.gif">
+<img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/qkXaZmZnPeqHNwAl3d/giphy.gif">
 
 
 
