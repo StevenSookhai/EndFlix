@@ -123,6 +123,7 @@ Each profile has a their own My List which the user  can keep track of movies ad
 
 <img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/qkXaZmZnPeqHNwAl3d/giphy.gif">
 
+### Code
 ```javascript
 handleArrow(arrow) {
         return (e) => {
