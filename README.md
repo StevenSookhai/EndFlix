@@ -3,7 +3,25 @@
 
 <img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="mainpage.gif">
 
-EndFlix is a clone of popular video streaming website Netflix. It provides functionality for creating an account, making profiles, adding movies to My List, searching for movies, and playing movies.
+EndFlix is a clone of popular video streaming website Netflix. It provides functionality for creating an account, making profiles, adding movies to My List, searching for movies, and playing movies. The technologies implemented in this project include:
+
+- Languages: Javascript, Ruby, HTML, and CSS
+- Frontend: React-Redux
+- Backend: Rails
+- Database: PostgreSQL
+- Hosting: Heroku
+- Asset Storage: AWS Simple Cloud Storage (S3)
+
+
+# MVP Features
+
+## Profiles
+
+Similarly to Netflix,users can create, edit, and delete profiles. Each profiles will have their own my-List and user can have a max of 5 profiles.
+
+<img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/8C1NWaigVy1WjlVGGT/giphy.gif">
+
+
 
 
 
