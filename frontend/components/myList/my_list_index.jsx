@@ -36,7 +36,7 @@ class ListIndex extends React.Component{
 
         // console.log(myListContainer.childElementCount)
         //  console.log(myListContainer.lastChild.previousElementSibling)
-        const currentPosition = myListContainer.getBoundingClientRect().x - 59.5
+        const currentPosition = myListContainer.getBoundingClientRect().x - 50
         //  console.log(window.innerWidth)
          if (((window.innerWidth - myListContainer.lastChild.getBoundingClientRect().x) >= 100) && arrow === 'right' ){
              leftArrowHide.style.visibility = "hidden"
