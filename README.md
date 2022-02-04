@@ -169,5 +169,6 @@ A search feature within the navigation bar allows a user to find movies by title
 <img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/EYaehEXuGpfwhulRoY/giphy.gif">
 
 
-
+## Bonus Feature
+In the future I would like to implement a most popular and the ability to like a video features. 
 
