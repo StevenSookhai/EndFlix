@@ -46,11 +46,76 @@ One of the core features of the Profiles MVP was to keep the current users profi
 
 ## Movie Browse and Show page
 
+When signed in and selecting a profile, a user is taken to the browse page. The browse page has featued title that start playing automactically. There are movies which are organized by genre. Users can see additional information about each title by hovering over its movie card, which also autoplays the movies trailer. From there, the user can play the video in fullscreen, add it to their My List, or click for more information, which opens a larger modal that includes the film's title and description.
+
 <img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/qkXaZmZnPeqHNwAl3d/giphy.gif">
 
 
 <img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/eRviZ93O5urjjIgJby/giphy.gif">
 
+### Code
+```javascript
+if (!this.state.showModal && !this.state.hovered){
+            return(
+                <div onClick={this.showModal}
+                     className="square"
+                     onMouseEnter={this.handleHover}
+                     onMouseLeave={this.handleHoverExit}>
+                    {/* <div className="cover"></div> */}
+                    <img onClick={this.handlePlay} className="cover" src={img}  />
+                    <div className="text">
+                        <button>P</button>
+                        <button>+</button>
+
+                        <div>
+                            <button>-</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            )
+        } else if (this.state.showModal && this.state.hovered && !this.state.playVideo){
+            return (
+                < MovieShowPageContainer video={this.props.video} hoveredExit={this.handleHoverExit} hovered={this.handleHover} showModal={this.showModal} />
+            )
+        } else if (!this.state.showModal && this.state.hovered){
+            return(
+            <div 
+                className="square"
+                onMouseEnter={this.handleHover}
+                onMouseLeave={this.handleHoverExit}>
+                <video className="cover" autoPlay={true}
+                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video>
+                <div className="text">
+                    <div className="movie-title">
+                        <span>{this.props.video.title}</span>
+                    </div>
+                    <div className="movie-card-buttons">
+                        <div className="right-btns">
+                                <button onClick={this.handlePlay} className="play-card-btn">
+                                    < PlayArrowIcon style={{ fontSize: '20px' }}/>
+                                </button>
+                                <button onClick={this.handleAddToList} className="movie-show-page-btn">{text}</button>
+                        </div>
+                        <div>
+                                <button onClick={this.showModal} className="add-to-list-btn">
+                                    < KeyboardArrowDownIcon style={{ fontSize: '22px' }}/>
+                                </button>
+                        </div>
+                    </div>
+                    <div className="movie-card-genre-list">
+                        <ul className="genre-movie-card-list"> 
+                            <li key={this.props.video.id}>
+                                    {this.props.video.genre}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            )
+        } 
+```
+In order to render different forms of the movie card, the above code renders different html depending on the state.   
 
 
 
