@@ -12,7 +12,7 @@ EndFlix is a clone of popular video streaming website Netflix. It provides funct
 - Hosting: Heroku
 - Asset Storage: AWS Simple Cloud Storage (S3)
 
-Check it out here ![EndFlix](https://endflix-app.herokuapp.com/)
+Check it out here [EndFlix](https://endflix-app.herokuapp.com/)
 
 # MVP Features
 
