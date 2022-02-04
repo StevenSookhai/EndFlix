@@ -44,6 +44,10 @@ Similarly to Netflix,users can create, edit, and delete profiles. Each profiles 
 ```
 One of the core features of the Profiles MVP was to keep the current users profile selected to persist after a state change in React/Redux. In order to achieve this I created a seperate session for the selected profile and bootstrapped it to the window. 
 
+## Movie Browse and Show page
+
+<img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/SJaAC1PQkkPC02kQAN/giphy-downsized-large.gif">
+
 
 
 
