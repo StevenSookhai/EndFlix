@@ -6,10 +6,61 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 export default class Genre extends React.Component{
     constructor(props){
         super(props)
+
+        this.state = {
+            moveItem: 50,
+            itemCount: 0
+        }
+        this.handleArrow = this.handleArrow.bind(this)
     }
     componentDidMount(){
         // this.props.fetchAllVideos()
     }
+
+    handleArrow(arrow) {
+        return (e) => {
+            const myListContainer = document.getElementsByClassName("sliderArrow")[0].parentElement
+            const currentPosition = myListContainer.getBoundingClientRect().x - 59.5
+            if (((window.innerWidth - myListContainer.lastChild.getBoundingClientRect().x) >= 100) && arrow === 'right') {
+                return false
+            }
+
+            if (arrow === 'right') {
+                const leftArrow = document.getElementsByClassName("sliderArrow")[0]
+                if (leftArrow.disabled !== false) {
+                    leftArrow.disabled = false
+                    this.setState({ itemCount: this.state.itemCount + 1 })
+                    const myListContainer = document.getElementById('myList')
+                    myListContainer.style.transform = `translateX(${-260 + currentPosition}px)`
+                    setTimeout(() => {
+                        leftArrow.disabled = true
+                    }, 1000);
+                }
+
+
+
+
+
+            }
+
+            else if (arrow === 'left' && this.state.itemCount !== 0) {
+                const rightArrow = document.getElementsByClassName("sliderArrow-right")[0]
+                if (rightArrow.disabled !== false) {
+                    rightArrow.disabled = false
+                    this.setState({ itemCount: this.state.itemCount - 1 })
+                    this.setState({ moveItem: this.state.moveItem += -260 + currentPosition })
+                    myListContainer.style.transform = `translateX(${260 + currentPosition}px)`
+                    rightArrow.disabled = false
+                    setTimeout(() => {
+                        rightArrow.disabled = true
+                    }, 1000);
+                }
+            }
+        }
+
+    }
+
+
 
     render(){
         // debugger
@@ -46,12 +97,18 @@ export default class Genre extends React.Component{
                 </div>
                 <div className="genre">
                     <h2>Action</h2>
+                    <div onClick={this.handleArrow('left')} className="sliderArrow">
+                        {/* < ArrowBackIosIcon style={{ fontSize: '75px', color: 'white' }} /> */}
+                    </div>
                     <div className="genre-list">
-                        < ArrowBackIosIcon style={{ fontSize: '32px', color: 'white' }} className="sliderArrow"/> 
+                        {/* < ArrowBackIosIcon style={{ fontSize: '32px', color: 'white' }} className="sliderArrow"/>  */}
 
                         {actions_movies}
-                        <ArrowForwardIosIcon style={{ fontSize: '32px', color: 'white' }}/>
+                        {/* <ArrowForwardIosIcon style={{ fontSize: '32px', color: 'white' }}/> */}
 
+                    </div>
+                    <div className="sliderArrow-right" >
+                        {/* <ArrowForwardIosIcon onClick={this.handleArrow('right')} style={{ fontSize: '75px', color: 'white' }} /> */}
                     </div>
                 </div>
                 <div className="genre">
@@ -68,17 +125,7 @@ export default class Genre extends React.Component{
                 </div>
                 <footer>
                     <div className='splash-footer'>
-                        <p>Social links</p>
-
-                        <ul>
-                            <li>
-                                <a href="">GitHub</a>
-                            </li>
-
-                            <li>
-                                <a href="">My LinkedIn</a>
-                            </li>
-                        </ul>
+                        
                     </div>
                 </footer>
                 {/* <div className="genre">

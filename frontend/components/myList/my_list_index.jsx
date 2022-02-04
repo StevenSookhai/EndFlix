@@ -5,6 +5,8 @@ import { fetchAllVideos } from "../../actions/video_actions";
 import { createListItem, fetchlists } from '../../actions/mylist_actions'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import BrowserHeader from "../browse/browser_header";
+import { withRouter } from "react-router-dom";
 
 class ListIndex extends React.Component{
     constructor(props){
@@ -28,17 +30,29 @@ class ListIndex extends React.Component{
      return (e) => {
         //  console.log(e.target.parentElement)
         const myListContainer = document.getElementById('myList')
+        const leftArrowHide = document.getElementsByClassName("sliderArrow-right")[0]
+        const rightArrowHide = document.getElementsByClassName("sliderArrow")[0]
+        //  rightArrowHide.style.visibility = "hidden"
+
         // console.log(myListContainer.childElementCount)
         //  console.log(myListContainer.lastChild.previousElementSibling)
         const currentPosition = myListContainer.getBoundingClientRect().x - 59.5
         //  console.log(window.innerWidth)
          if (((window.innerWidth - myListContainer.lastChild.getBoundingClientRect().x) >= 100) && arrow === 'right' ){
+             leftArrowHide.style.visibility = "hidden"
             //  console.log('not return fasle')
              return false
          }
 
+         if (this.state.itemCount === 1){
+         rightArrowHide.style.visibility = "hidden"
+
+         }
+
          if (arrow === 'right'){
              const leftArrow = document.getElementsByClassName("sliderArrow")[0]
+             rightArrowHide.style.visibility = "visible"
+
             //  console.log(leftArrow.disabled)
             // setTimeout(() => {
             // //   document.getElementsByClassName("sliderArrow")[0].click = null 
@@ -70,6 +84,8 @@ class ListIndex extends React.Component{
         
         else if(arrow === 'left' && this.state.itemCount !== 0){
             const rightArrow = document.getElementsByClassName("sliderArrow-right")[0]
+             leftArrowHide.style.visibility = "visible"
+
             //  console.log(this.state.itemCount)
              if(rightArrow.disabled !== false){
                  rightArrow.disabled = false
@@ -108,7 +124,18 @@ class ListIndex extends React.Component{
     render(){
         if (this.props.videos === undefined) return null
         // const mylistVideos = []
-
+        const id = this.props.location.pathname === '/my-list' ? "myList-page" : "myList"
+        const classNam = this.props.location.pathname === '/my-list' ? "search-list" : "genre-list"
+        const classCon = this.props.location.pathname === '/my-list' ? "search-container" : "genres-container"
+        const classWrap = this.props.location.pathname === '/my-list' ? "search-results" : "genre"
+        const head = this.props.location.pathname !== '/my-list' ? <h2>MyList</h2> : null
+        const header = this.props.location.pathname === '/my-list' ? < BrowserHeader /> : null
+        const rightArrow = this.props.location.pathname !== '/my-list' ? < ArrowBackIosIcon style={{ fontSize: '75px', color: 'white' }} /> 
+                           : null
+        const leftArrow = this.props.location.pathname !== '/my-list' ? <ArrowForwardIosIcon onClick={this.handleArrow('right')} style={{ fontSize: '75px', color: 'white' }} />
+                           : null
+        
+        // debugger
         const mylistVideos = this.getListVideos()
         // debugger
         // const mylistVideos = Object.values(this.props.lists).filter(list => this.props.videos[list.video_id])
@@ -116,24 +143,26 @@ class ListIndex extends React.Component{
 
         // console.log(myList)
         return(
-            <div className="genres-container">
+          <div>
+                   
+                <div className="genres-container">
+                    {header}
                         <div onClick={this.handleArrow('left')} className="sliderArrow">
-                        < ArrowBackIosIcon   style={{ fontSize: '75px', color: 'white' }} /> 
+                        {/* < ArrowBackIosIcon   style={{ fontSize: '75px', color: 'white' }} />  */}
+                        {rightArrow}
                         </div>
-                <div className="genre">
-                    <h2>MyList</h2>
-                    <div id="myList" className="genre-list">
-
-
+                    <div className={classWrap}>
+                    {head}
+                        <div id={id} className={classNam}>
                         {myList}
-                        
-
                     </div>
                 </div>
                     <div className="sliderArrow-right" >
-                    <ArrowForwardIosIcon onClick={this.handleArrow('right')} style={{ fontSize: '75px', color: 'white' }} />
+                    {/* <ArrowForwardIosIcon onClick={this.handleArrow('right')} style={{ fontSize: '75px', color: 'white' }} /> */}
+                        {leftArrow}
                     </div>
             </div>
+          </div>
         )
 
     }
@@ -156,4 +185,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListIndex)
+export default withRouter( connect(mapStateToProps, mapDispatchToProps)(ListIndex))

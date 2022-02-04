@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { logout } from "../../actions/session_actions";
 import { Redirect } from "react-router-dom";
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import SearchIcon from '@mui/icons-material/Search';
 
 class BrowseHeader extends React.Component {
     constructor(props){
@@ -17,7 +18,8 @@ class BrowseHeader extends React.Component {
         this.handleManage = this.handleManage.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
         this.update = this.update.bind(this)
-        this,this.handleExitSearch = this.handleExitSearch.bind(this)
+        this.handleExitSearch = this.handleExitSearch.bind(this)
+        this.handleScroll = this.handleScroll.bind(this)
     }
 
     handleSearch(e){
@@ -37,8 +39,18 @@ class BrowseHeader extends React.Component {
         this.setState({ searchInput: e.currentTarget.value });
     }
     componentDidMount(){
-        const header = document.getElementsByClassName("header-main-container")
+        // const header = document.getElementsByClassName("header-main-container")
+        window.addEventListener('scroll', this.handleScroll)
 
+    }
+
+    handleScroll(e){
+        const header = document.getElementsByClassName('header-main-container')[0];
+        if (window.scrollY > 50) {
+            header.style.backgroundColor = "rgba(0, 0, 0, 1)";
+        } else if (window.scrollY < 50) {
+            header.style.backgroundColor = "rgba(0, 0, 0, 0)";
+        }
     }
 
     render(){
@@ -113,8 +125,10 @@ class BrowseHeader extends React.Component {
             {/* <img width='35px' src={bellIcon}>
             </img> */}
                
-                <img onClick={this.handleSearch} width="30px" height="30px"src={window.searchIcon}></img>
-                < NotificationsIcon style={{ fontSize: '32px' , color: 'white'}}/> 
+                <div className="search-icon" onClick={this.handleSearch} width="30px" height="30px">
+                    <SearchIcon style={{ fontSize: '40px', color: 'white' }} /> 
+                </div>
+                < NotificationsIcon style={{ fontSize: '35px' , color: 'white'}}/> 
 
             <div className="dropdown-container">
 
