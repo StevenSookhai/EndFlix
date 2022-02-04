@@ -139,7 +139,7 @@ class ListIndex extends React.Component{
         const mylistVideos = this.getListVideos()
         // debugger
         // const mylistVideos = Object.values(this.props.lists).filter(list => this.props.videos[list.video_id])
-        const myList = Object.values(mylistVideos).map(video => <GenreListItem video={video}  />)
+        const myList = Object.values(mylistVideos).map(video => <GenreListItem key={Math.random() * 1000000} video={video}  />)
 
         // console.log(myList)
         return(

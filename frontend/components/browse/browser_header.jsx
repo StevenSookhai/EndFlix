@@ -169,9 +169,10 @@ class BrowseHeader extends React.Component {
 
                         <div className="header-links">
                             <a href="#">Home</a>
-                            <a href="#">GitHub</a>
-                            <a href="#">LinkedIn</a>
-                            <a href="#">AngelList</a>
+                            <a href="https://github.com/StevenSookhai" target="_blank">Github</a>|
+                            <a href="https://www.linkedin.com/in/steven-sookhai-37192a22a/" target="_blank">LinkedIn</a>|
+                            <a href="https://angel.co/u/steven-sookhai" target="_blank">Angelist</a>
+                            <a href="https://stevensookhai.github.io/" target="_blank">Portfolio</a>
                             {/* <a href="#">My List</a> */}
                             <Link to="/my-list">My List</Link>
                         </div>
