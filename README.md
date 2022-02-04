@@ -117,5 +117,11 @@ if (!this.state.showModal && !this.state.hovered){
 ```
 In order to render different forms of the movie card, the above code renders different html depending on the state.   
 
+## My List
+
+Each profile has a their own My List which the user keep track of movies added to the list. They can add or delete a given movie from the main browse page or a separate My List page. Users are given the ability to scroll through their my list on the main browse page.
+
+<img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/qkXaZmZnPeqHNwAl3d/giphy.gif">
+
 
 
