@@ -119,9 +119,48 @@ In order to render different forms of the movie card, the above code renders dif
 
 ## My List
 
-Each profile has a their own My List which the user keep track of movies added to the list. They can add or delete a given movie from the main browse page or a separate My List page. Users are given the ability to scroll through their my list on the main browse page.
+Each profile has a their own My List which the user  can keep track of movies added to the list. They can add or delete a given movie from the main browse page or a separate My List page. Users are given the ability to scroll through their my list on the main browse page.
 
 <img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/qkXaZmZnPeqHNwAl3d/giphy.gif">
+
+```javascript
+handleArrow(arrow) {
+        return (e) => {
+            const myListContainer = document.getElementsByClassName("sliderArrow")[0].parentElement
+            const currentPosition = myListContainer.getBoundingClientRect().x - 59.5
+            if (((window.innerWidth - myListContainer.lastChild.getBoundingClientRect().x) >= 100) && arrow === 'right') {
+                return false
+            }
+            if (arrow === 'right') {
+                const leftArrow = document.getElementsByClassName("sliderArrow")[0]
+                if (leftArrow.disabled !== false) {
+                    leftArrow.disabled = false
+                    this.setState({ itemCount: this.state.itemCount + 1 })
+                    const myListContainer = document.getElementById('myList')
+                    myListContainer.style.transform = `translateX(${-260 + currentPosition}px)`
+                    setTimeout(() => {
+                        leftArrow.disabled = true
+                    }, 1000);
+                }
+            }
+            else if (arrow === 'left' && this.state.itemCount !== 0) {
+                const rightArrow = document.getElementsByClassName("sliderArrow-right")[0]
+                if (rightArrow.disabled !== false) {
+                    rightArrow.disabled = false
+                    this.setState({ itemCount: this.state.itemCount - 1 })
+                    this.setState({ moveItem: this.state.moveItem += -260 + currentPosition })
+                    myListContainer.style.transform = `translateX(${260 + currentPosition}px)`
+                    rightArrow.disabled = false
+                    setTimeout(() => {
+                        rightArrow.disabled = true
+                    }, 1000);
+                }
+            }
+        }
+
+    }
+```
+With the above code, users are able to scroll through their my List. The handle arrow function checks which arrow is clicked and then it gets the current position of the container and then translates it by a set pixel + the current position of the my-list container.
 
 
 
