@@ -103,7 +103,24 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
             )
         } else if (this.state.showModal && this.state.hovered && !this.state.playVideo){
             return (
+                <>
+                   <div onClick={this.showModal}
+                     className="square"
+                     >
+                    {/* <div className="cover"></div> */}
+                    <img onClick={this.handlePlay} className="cover" src={img}  />
+                    <div className="text">
+                        <button>P</button>
+                        <button>+</button>
+
+                        <div>
+                            <button>-</button>
+                        </div>
+                    </div>
+                    
+                </div>
                 < MovieShowPageContainer video={this.props.video} hoveredExit={this.handleHoverExit} hovered={this.handleHover} showModal={this.showModal} />
+                </>
             )
         } else if (!this.state.showModal && this.state.hovered){
             return(
@@ -116,9 +133,9 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
                 {/* <img className="cover" src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
                 {/* comment this back in */}
-                <video className="cover" autoPlay={true}
-                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video>
-                    {/* <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" /> */}
+                {/* <video className="cover" autoPlay={true}
+                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video> */}
+                    <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" />
 
                 <div className="text">
                     <div className="movie-title">

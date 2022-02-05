@@ -112,12 +112,12 @@ export default class MovieShowPage extends React.Component{
                                 <button onClick={this.handleModal} className="Modal-button">X</button>
                             </div>
 
-                            {/* <img src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
+                            <img src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" />
 
-                            <video autoPlay={true}
+                            {/* <video autoPlay={true}
                             muted={muted} src={this.props.video.videoURL} 
                              alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4">
-                        </video>
+                        </video> */}
 
 
                             {/* <img className="cover" src={img} /> */}

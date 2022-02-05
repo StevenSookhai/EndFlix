@@ -13,7 +13,8 @@ class ListIndex extends React.Component{
         super(props)
         this.state = {
             moveItem : 50,
-            itemCount: 0
+            itemCount: 0,
+            movePos: 0
         }
 
         this.getListVideos = this.getListVideos.bind(this)
@@ -69,7 +70,8 @@ class ListIndex extends React.Component{
             // console.log(leftArrow)
             const myListContainer = document.getElementById('myList')
             // console.log(myListContainer)
-            myListContainer.style.transform = `translateX(${-260 + currentPosition}px)`
+            // myListContainer.style.transform = `translateX(${-260 + currentPosition}px)`
+                this.setState({ movePos: -260 + currentPosition})
                 setTimeout(() => {
                     leftArrow.disabled = true
                     //   document.getElementsByClassName("sliderArrow")[0].click = null
@@ -96,7 +98,9 @@ class ListIndex extends React.Component{
                  this.setState({ moveItem: this.state.moveItem += -260 + currentPosition})
                 // const myListContainer = document.getElementById('myList')
                 // console.log(myListContainer)
-                myListContainer.style.transform = `translateX(${260 + currentPosition}px)`
+                // myListContainer.style.transform = `translateX(${260 + currentPosition}px)`
+                 this.setState({ movePos: 260 + currentPosition })
+
                 // console.log(rightArrow)
                  rightArrow.disabled = false
     
@@ -124,6 +128,11 @@ class ListIndex extends React.Component{
     render(){
         if (this.props.videos === undefined) return null
         // const mylistVideos = []
+        let style = {
+            position: "relative",
+                left: `${this.state.movePos}px`
+        }
+    
         const id = this.props.location.pathname === '/my-list' ? "myList-page" : "myList"
         const classNam = this.props.location.pathname === '/my-list' ? "search-list" : "genre-list"
         const classCon = this.props.location.pathname === '/my-list' ? "search-container" : "genres-container"
@@ -153,7 +162,7 @@ class ListIndex extends React.Component{
                         </div>
                     <div className={classWrap}>
                     {head}
-                        <div id={id} className={classNam}>
+                        <div id={id} style={style} className={classNam}>
                         {myList}
                     </div>
                 </div>
