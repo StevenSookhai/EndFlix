@@ -133,9 +133,9 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
                 {/* <img className="cover" src="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" alt="" /> */}
                 {/* comment this back in */}
-                {/* <video className="cover" autoPlay={true}
-                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video> */}
-                    <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" />
+                <video className="cover" autoPlay={true}
+                        muted={true} src={this.props.video.videoURL} alt="https://endflix-seeds.s3.amazonaws.com/MugenTrain.mp4"></video>
+                    {/* <img className="cover" src={img} alt="https://endflix-seeds.s3.amazonaws.com/tempthumbnail.jpg" /> */}
 
                 <div className="text">
                     <div className="movie-title">
