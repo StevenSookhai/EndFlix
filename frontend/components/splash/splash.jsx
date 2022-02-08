@@ -91,12 +91,12 @@ class Splash extends React.Component{
                             <ul>
                                 <li className="social-li">
                                     < GitHubIcon style={{ color: 'white' }}/>
-                                    <a href="https://github.com/StevenSookhai">GitHub</a>
+                                    <a href="https://github.com/StevenSookhai" target="_blank" >GitHub</a>
                                 </li>
 
                                 <li className="social-li">
                                     < LinkedInIcon style={{color : 'white'}}/>
-                                    <a href="https://www.linkedin.com/in/steven-sookhai-37192a22a/">LinkedIn</a>
+                                    <a href="https://www.linkedin.com/in/steven-sookhai-37192a22a/" target="_blank" >LinkedIn</a>
                                 </li>
                             </ul>
                         </div>
