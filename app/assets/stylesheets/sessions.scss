@@ -145,6 +145,8 @@
     border: none;
   }
   .session-email{
+    margin-top: 20px;
+   
     color: #cfcccc
   }
   .session-password{
@@ -163,6 +165,8 @@
     li{
       text-decoration: none;
       list-style-type: none;
+      margin-bottom: 10px;
+      // padding: 5px;
     }
   }
 }

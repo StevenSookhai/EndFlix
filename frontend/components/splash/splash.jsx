@@ -2,6 +2,8 @@ import React from "react";
 import GreetingContainer from "../greetings/greeting_container";
 import { Link } from "react-router-dom";
 import Header from "./header";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 class Splash extends React.Component{
     constructor(props){
@@ -87,12 +89,14 @@ class Splash extends React.Component{
                             <p>Social links</p>
 
                             <ul>
-                                <li>
-                                    <a href="">GitHub</a>
+                                <li className="social-li">
+                                    < GitHubIcon style={{ color: 'white' }}/>
+                                    <a href="https://github.com/StevenSookhai">GitHub</a>
                                 </li>
 
-                                <li>
-                                    <a href="">My LinkedIn</a>
+                                <li className="social-li">
+                                    < LinkedInIcon style={{color : 'white'}}/>
+                                    <a href="https://www.linkedin.com/in/steven-sookhai-37192a22a/">LinkedIn</a>
                                 </li>
                             </ul>
                         </div>
