@@ -3,6 +3,14 @@
   <head>
     <title>EndFlix</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <meta property="og:title" content="EndFlix" />
+     <meta property='og:image' content="<%= image_url('mainpage.gif') %>"/>
+     <meta property="og:description"
+       content="EndFlix is a clone of popular video streaming website Netflix. It provides functionality for creating an account, making profiles, adding movies to My List, searching for movies, and playing movies."
+     />
+     <meta property="og:url"
+       content="https://endflix-app.herokuapp.com/#/"
+     />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('logo.png') %>
